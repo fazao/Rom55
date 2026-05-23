@@ -900,6 +900,179 @@
       .btn-secondary { font-size: 10px; padding: 12px 14px; }
       .stat__num     { font-size: 22px; }
     }
+    /* ═══════════════════════════════════════════
+       SEGUNDA DOBRA — STATS DE MERCADO
+    ═══════════════════════════════════════════ */
+    .sec2 {
+      position: relative;
+      z-index: 1;
+      padding: 120px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+
+    /* hairline decorativa no topo */
+    .sec2::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-2), transparent);
+    }
+
+    /* glow suave de fundo */
+    .sec2::after {
+      content: "";
+      position: absolute;
+      top: -30%; left: 50%;
+      transform: translateX(-50%);
+      width: 70%; height: 60%;
+      background: radial-gradient(ellipse at 50% 0%,
+        rgba(79,142,247,.07) 0%,
+        transparent 70%);
+      pointer-events: none;
+    }
+
+    /* headline da seção */
+    .sec2__head {
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto 72px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec2__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue-logo);
+      margin-bottom: 24px;
+    }
+    .sec2__eyebrow::before,
+    .sec2__eyebrow::after {
+      content: "";
+      width: 24px; height: 1px;
+      background: var(--blue-logo);
+      opacity: .5;
+    }
+    .sec2__title {
+      font-family: var(--font-body);
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 400;
+      line-height: 1.4;
+      color: var(--fg-primary);
+      letter-spacing: -.3px;
+    }
+    .sec2__title strong {
+      font-weight: 700;
+      color: var(--fg-primary);
+    }
+
+    /* grid de cards */
+    .sec2__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* card individual */
+    .sec2__card {
+      background: var(--bg-elev-1);
+      border: 1px solid var(--border-1);
+      border-radius: 12px;
+      padding: 40px 32px 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    /* linha de acento no topo do card */
+    .sec2__card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--blue-logo), #60A5FA);
+      opacity: 0;
+      transition: opacity .35s var(--ease);
+    }
+    /* brilho de hover */
+    .sec2__card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%,
+        rgba(79,142,247,.06) 0%,
+        transparent 70%);
+      opacity: 0;
+      transition: opacity .35s var(--ease);
+    }
+    .sec2__card:hover {
+      border-color: rgba(79,142,247,.3);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(7,12,26,.5), 0 0 0 1px rgba(79,142,247,.15);
+    }
+    .sec2__card:hover::before { opacity: 1; }
+    .sec2__card:hover::after  { opacity: 1; }
+
+    /* número grande */
+    .sec2__num {
+      font-family: var(--font-display);
+      font-size: clamp(52px, 6vw, 80px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -2px;
+      background: linear-gradient(135deg, #4F8EF7 0%, #93C5FD 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* texto descritivo */
+    .sec2__text {
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.65;
+      color: var(--fg-muted);
+      flex: 1;
+    }
+    .sec2__text strong {
+      color: var(--fg-secondary);
+      font-weight: 600;
+    }
+
+    /* fonte */
+    .sec2__source {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--fg-muted-2);
+      padding-top: 12px;
+      border-top: 1px solid var(--border-1);
+    }
+
+    /* responsivo */
+    @media (max-width: 860px) {
+      .sec2 { padding: 80px 16px; }
+      .sec2__grid { grid-template-columns: 1fr; gap: 16px; }
+      .sec2__head { margin-bottom: 48px; }
+      .sec2__card { padding: 28px 24px 24px; }
+      .sec2__num  { font-size: clamp(44px, 12vw, 64px); }
+    }
+    @media (max-width: 560px) {
+      .sec2 { padding: 64px 12px; }
+      .sec2__title { font-size: clamp(18px, 5vw, 24px); }
+    }
+
   </style>
 </head>
 
@@ -952,9 +1125,9 @@
       <p class="hero__sub">Estratégia · Dados · Escala</p>
 
       <p class="hero__desc">
-        A Rom55 transforma empresas com <strong>estratégias de crescimento orientadas por dados</strong>.
+        A Rom55 transforma empresas <strong>utilizando estratégias de crescimento orientadas por dados.</strong>
         Do tráfego à conversão, da aquisição à retenção.
-        Atuamos em toda a jornada de compra — <strong>cada ação calculada para maximizar seu ROI e acelerar sua escala.</strong>
+        Atuamos em toda a jornada de compra, onde <strong>cada ação é calculada para maximizar seu ROI e acelerar sua escala.</strong>
       </p>
 
       <div class="hero__actions">
@@ -1014,6 +1187,53 @@
       <span>Clientes Ativos<span class="t-val">200+</span></span><span class="t-div">·</span>
     </div>
   </div>
+
+  <!-- ═══════════ SEGUNDA DOBRA — STATS DE MERCADO ═══════════ -->
+  <section class="sec2">
+
+    <div class="sec2__head">
+      <div class="sec2__eyebrow">Contexto de mercado</div>
+      <h2 class="sec2__title">
+        O mercado está mudando.<br>
+        <strong>A pergunta que fica é: sua empresa tem acompanhado essas mudanças?</strong>
+      </h2>
+    </div>
+
+    <div class="sec2__grid">
+
+      <div class="sec2__card">
+        <div class="sec2__num">54%</div>
+        <p class="sec2__text">
+          dos líderes empresariais acreditam que suas empresas
+          <strong>não serão competitivas além de 2030</strong>
+          sem adotar IA em escala. O relógio já está correndo.
+        </p>
+        <div class="sec2__source">Mercer, 2025</div>
+      </div>
+
+      <div class="sec2__card">
+        <div class="sec2__num">3×</div>
+        <p class="sec2__text">
+          A IA triplica a produtividade em um terço das tarefas operacionais —
+          <strong>reduzindo uma atividade de 90 minutos para 30.</strong>
+          Quem implementa primeiro escala mais rápido com o mesmo time.
+        </p>
+        <div class="sec2__source">Upwork Research Institute, 2024</div>
+      </div>
+
+      <div class="sec2__card">
+        <div class="sec2__num">33%</div>
+        <p class="sec2__text">
+          dos aplicativos empresariais terão IA agêntica integrada até 2028,
+          ante menos de 1% em 2024.
+          <strong>Empresas que não se prepararem agora ficarão para trás.</strong>
+        </p>
+        <div class="sec2__source">Gartner, 2025</div>
+      </div>
+
+    </div>
+
+  </section>
 
   <script>
     /* ── Mobile nav ── */
