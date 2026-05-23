@@ -1073,6 +1073,361 @@
       .sec2__title { font-size: clamp(18px, 5vw, 24px); }
     }
 
+    /* ═══════════════════════════════════════════
+       TERCEIRA DOBRA — ALERTA ESTRATÉGICO
+    ═══════════════════════════════════════════ */
+    .sec3 {
+      position: relative;
+      z-index: 1;
+      padding: 120px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+    .sec3::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-2), transparent);
+    }
+    /* glow lateral esquerdo */
+    .sec3::after {
+      content: "";
+      position: absolute;
+      top: 10%; left: -5%;
+      width: 45%; height: 80%;
+      background: radial-gradient(ellipse at 10% 50%,
+        rgba(79,142,247,.06) 0%,
+        transparent 65%);
+      pointer-events: none;
+    }
+
+    .sec3__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* coluna esquerda — título */
+    .sec3__left {
+      position: relative;
+      padding-left: 24px;
+    }
+    /* barra vertical azul à esquerda */
+    .sec3__left::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 4px; bottom: 4px;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--blue-logo), #60A5FA);
+      border-radius: 2px;
+    }
+    .sec3__title {
+      font-family: var(--font-body);
+      font-size: clamp(22px, 2.8vw, 34px);
+      font-weight: 400;
+      line-height: 1.35;
+      color: var(--fg-primary);
+      letter-spacing: -.2px;
+    }
+    .sec3__title strong {
+      display: block;
+      font-weight: 700;
+      color: var(--blue-logo);
+      margin-top: 8px;
+      font-size: clamp(22px, 2.8vw, 34px);
+    }
+
+    /* coluna direita — texto + destaque */
+    .sec3__right {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+    .sec3__body {
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.8;
+      color: var(--fg-muted);
+    }
+    .sec3__body strong {
+      color: var(--fg-secondary);
+      font-weight: 600;
+    }
+    /* box de destaque — estilo info */
+    .sec3__callout {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 20px 24px;
+      background: rgba(79,142,247,.06);
+      border: 1px solid rgba(79,142,247,.2);
+      border-radius: 8px;
+    }
+    .sec3__callout-icon {
+      flex-shrink: 0;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      border: 1px solid rgba(79,142,247,.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px;
+      color: var(--blue-logo);
+      margin-top: 1px;
+    }
+    .sec3__callout-text {
+      font-family: var(--font-body);
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--fg-secondary);
+    }
+    .sec3__callout-text strong {
+      color: var(--fg-primary);
+      font-weight: 600;
+    }
+
+    /* responsivo */
+    @media (max-width: 860px) {
+      .sec3 { padding: 80px 16px; }
+      .sec3__inner { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 560px) {
+      .sec3 { padding: 64px 12px; }
+      .sec3__title { font-size: clamp(20px, 6vw, 28px); }
+    }
+
+    /* ═══════════════════════════════════════════
+       QUARTA DOBRA — COMPARAÇÃO (DS1 style)
+    ═══════════════════════════════════════════ */
+    .sec4 {
+      position: relative;
+      z-index: 1;
+      padding: 120px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+    .sec4::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-2), transparent);
+    }
+
+    /* título da seção — estilo DS1 uppercase Barlow Condensed */
+    .sec4__head {
+      text-align: center;
+      margin-bottom: 64px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec4__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      margin-bottom: 20px;
+    }
+    .sec4__eyebrow::before, .sec4__eyebrow::after {
+      content: ""; width: 24px; height: 1px;
+      background: var(--border-2);
+    }
+    .sec4__title {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1;
+      color: var(--fg-primary);
+    }
+    .sec4__title span { color: var(--blue-logo); }
+
+    /* grade de comparação */
+    .sec4__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+      margin-bottom: 24px;
+    }
+
+    /* card base */
+    .cmp-card {
+      padding: 28px;
+      border: 1px solid;
+      background: var(--bg-elev-1);
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .6s var(--ease), transform .6s var(--ease),
+                  box-shadow .35s var(--ease), border-color .35s var(--ease);
+    }
+    .cmp-card.is-visible { opacity: 1; transform: translateY(0); }
+    .cmp-card:nth-child(2) { transition-delay: .15s; }
+
+    /* glow lateral externo */
+    .cmp-card--neg {
+      border-color: rgba(239,68,68,.15);
+      box-shadow: 0 0 48px rgba(239,68,68,.06),
+                  inset 0 0 0 1px rgba(239,68,68,.1);
+    }
+    .cmp-card--neg:hover {
+      border-color: rgba(239,68,68,.35);
+      box-shadow: 0 0 64px rgba(239,68,68,.12),
+                  inset 0 0 0 1px rgba(239,68,68,.2);
+    }
+    .cmp-card--pos {
+      border-color: rgba(79,142,247,.15);
+      box-shadow: 0 0 48px rgba(79,142,247,.06),
+                  inset 0 0 0 1px rgba(79,142,247,.1);
+    }
+    .cmp-card--pos:hover {
+      border-color: rgba(79,142,247,.35);
+      box-shadow: 0 0 64px rgba(79,142,247,.12),
+                  inset 0 0 0 1px rgba(79,142,247,.2);
+    }
+
+    /* cabeçalho do card */
+    .cmp-card__head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .cmp-card__icon {
+      width: 30px; height: 30px;
+      border-radius: 9999px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px; flex-shrink: 0;
+    }
+    .cmp-card--neg .cmp-card__icon {
+      background: rgba(239,68,68,.12);
+      border: 1px solid rgba(239,68,68,.3);
+      color: #EF4444;
+    }
+    .cmp-card--pos .cmp-card__icon {
+      background: rgba(79,142,247,.10);
+      border: 1px solid rgba(79,142,247,.3);
+      color: var(--blue-logo);
+    }
+    .cmp-card__title {
+      font-family: var(--font-body);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--fg-primary);
+      letter-spacing: -.2px;
+    }
+
+    /* lista de itens */
+    .cmp-card__list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .cmp-card__list li {
+      display: grid;
+      grid-template-columns: 20px 1fr;
+      gap: 12px;
+      align-items: start;
+      font-size: 13.5px;
+      line-height: 1.55;
+      color: var(--fg-secondary);
+    }
+
+    /* ícone de item */
+    .cmp-icon {
+      width: 18px; height: 18px;
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 9px; font-weight: 800;
+      margin-top: 2px; flex-shrink: 0;
+    }
+    .cmp-icon--x {
+      background: rgba(63,22,22,.9);
+      border: 1px solid rgba(92,28,28,.9);
+      color: #EF4444;
+    }
+    .cmp-icon--ok {
+      background: rgba(79,142,247,.10);
+      border: 1px solid rgba(79,142,247,.28);
+      color: var(--blue-logo);
+    }
+
+    /* barra de stats abaixo dos cards */
+    .sec4__stats {
+      border: 1px solid var(--border-1);
+      background: rgba(13,18,48,.55);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: 8px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    .sec4__stats::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, #EF4444, var(--blue-logo), #60A5FA);
+    }
+    .sec4__stat {
+      padding: 28px 32px;
+      border-right: 1px solid var(--border-1);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: background .35s var(--ease);
+    }
+    .sec4__stat:last-child { border-right: none; }
+    .sec4__stat:hover { background: rgba(79,142,247,.04); }
+    .sec4__stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin-bottom: 8px;
+    }
+    .sec4__stat-num.c-red  { color: #EF4444; text-shadow: 0 0 24px rgba(239,68,68,.2); }
+    .sec4__stat-num.c-blue { color: var(--blue-logo); text-shadow: 0 0 24px rgba(79,142,247,.2); }
+    .sec4__stat-num.c-wht  { color: var(--fg-primary); }
+    .sec4__stat-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--fg-muted-2);
+      line-height: 1.5;
+    }
+
+    /* responsivo */
+    @media (max-width: 860px) {
+      .sec4 { padding: 80px 16px; }
+      .sec4__grid { grid-template-columns: 1fr; }
+      .sec4__stats { grid-template-columns: 1fr; }
+      .sec4__stat { border-right: none; border-bottom: 1px solid var(--border-1); }
+      .sec4__stat:last-child { border-bottom: none; }
+    }
+    @media (max-width: 560px) {
+      .sec4 { padding: 64px 12px; }
+      .sec4__title { font-size: clamp(22px, 8vw, 36px); }
+    }
+
   </style>
 </head>
 
@@ -1235,6 +1590,134 @@
 
   </section>
 
+  <!-- ═══════════ TERCEIRA DOBRA — ALERTA ESTRATÉGICO ═══════════ -->
+  <section class="sec3">
+    <div class="sec3__inner">
+
+      <!-- Coluna esquerda: título de impacto -->
+      <div class="sec3__left">
+        <h2 class="sec3__title">
+          Se sua empresa não tem acompanhado o mercado,
+          <strong>reveja seu planejamento estratégico — agora.</strong>
+        </h2>
+      </div>
+
+      <!-- Coluna direita: corpo + destaque -->
+      <div class="sec3__right">
+        <p class="sec3__body">
+          O mercado não espera. Enquanto você analisa, seus concorrentes automatizam processos,
+          reduzem custos operacionais e escalam com times menores.
+          A inteligência artificial deixou de ser uma vantagem competitiva para se tornar
+          um <strong>requisito de sobrevivência</strong> no ambiente de negócios atual.
+        </p>
+        <p class="sec3__body">
+          O resultado de quem fica parado? Operações mais lentas, custos crescentes,
+          equipes sobrecarregadas com tarefas repetitivas — e um gap cada vez maior
+          em relação aos líderes do setor que já redesenharam seus processos com IA no centro.
+        </p>
+        <div class="sec3__callout">
+          <div class="sec3__callout-icon">ⓘ</div>
+          <p class="sec3__callout-text">
+            Como citado acima, empresas que não implementarem IA em sua operação
+            <strong>ficarão para trás</strong> — e a Rom55 existe para garantir
+            que isso não aconteça com a sua.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════ QUARTA DOBRA — COMPARAÇÃO ═══════════ -->
+  <section class="sec4">
+
+    <div class="sec4__head">
+      <div class="sec4__eyebrow">Empresas que ficam vs. empresas que crescem</div>
+      <h2 class="sec4__title">Sem IA <span>vs.</span> Com Rom55</h2>
+    </div>
+
+    <div class="sec4__grid">
+
+      <!-- Card negativo — sem IA -->
+      <div class="cmp-card cmp-card--neg">
+        <div class="cmp-card__head">
+          <div class="cmp-card__icon">⊖</div>
+          <div class="cmp-card__title">Empresas sem IA na operação</div>
+        </div>
+        <ul class="cmp-card__list">
+          <li>
+            <span class="cmp-icon cmp-icon--x">×</span>
+            Equipe sobrecarregada com tarefas repetitivas e operacionais
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--x">×</span>
+            Decisões lentas por falta de dados em tempo real
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--x">×</span>
+            Custos crescentes sem aumento proporcional de produtividade
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--x">×</span>
+            Perda de mercado para concorrentes que já automatizaram
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--x">×</span>
+            Escalabilidade limitada — crescer exige contratar mais
+          </li>
+        </ul>
+      </div>
+
+      <!-- Card positivo — com Rom55 -->
+      <div class="cmp-card cmp-card--pos">
+        <div class="cmp-card__head">
+          <div class="cmp-card__icon">△</div>
+          <div class="cmp-card__title">Com a Rom55 e IA na estratégia</div>
+        </div>
+        <ul class="cmp-card__list">
+          <li>
+            <span class="cmp-icon cmp-icon--ok">✓</span>
+            Processos automatizados — time focado no que gera resultado
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--ok">✓</span>
+            Dados e IA orientando cada decisão de marketing e vendas
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--ok">✓</span>
+            Redução de custos operacionais com ganho real de eficiência
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--ok">✓</span>
+            Estratégias adaptadas ao mercado em tempo real
+          </li>
+          <li>
+            <span class="cmp-icon cmp-icon--ok">✓</span>
+            Escala sem aumentar estrutura — crescimento sustentável
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Stats bar abaixo dos cards -->
+    <div class="sec4__stats">
+      <div class="sec4__stat">
+        <div class="sec4__stat-num c-red">3×</div>
+        <div class="sec4__stat-label">mais lento sem<br>automação de tarefas</div>
+      </div>
+      <div class="sec4__stat">
+        <div class="sec4__stat-num c-blue">40%</div>
+        <div class="sec4__stat-label">ganho médio de<br>produtividade com IA</div>
+      </div>
+      <div class="sec4__stat">
+        <div class="sec4__stat-num c-wht">25%</div>
+        <div class="sec4__stat-label">redução de custos<br>com IA integrada</div>
+      </div>
+    </div>
+
+  </section>
+
   <script>
     /* ── Mobile nav ── */
     const toggle  = document.getElementById('navToggle');
@@ -1274,6 +1757,15 @@
       });
     }, { threshold: .3 });
     if (statsEl) io.observe(statsEl);
+
+    /* ── Animar compare cards ao entrar na viewport ── */
+    const cmpCards = document.querySelectorAll('.cmp-card');
+    if (cmpCards.length) {
+      const cmpObs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); cmpObs.unobserve(e.target); } });
+      }, { threshold: .15 });
+      cmpCards.forEach(c => cmpObs.observe(c));
+    }
 
     /* ════════════════════════════════════════════════════
        CHART CANVAS — gráfico animado lateral direito
