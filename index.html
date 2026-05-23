@@ -994,6 +994,13 @@
       overflow: hidden;
       transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
     }
+    .sec2__card .cmp-shine {
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(79,142,247,.09) 50%,
+        transparent 100%);
+    }
+    .sec2__card:hover .cmp-shine { transform: translateX(120%) skewX(-15deg); }
     /* linha de acento no topo do card */
     .sec2__card::before {
       content: "";
@@ -1278,24 +1285,62 @@
 
     /* glow lateral externo */
     .cmp-card--neg {
-      border-color: rgba(239,68,68,.15);
-      box-shadow: 0 0 48px rgba(239,68,68,.06),
-                  inset 0 0 0 1px rgba(239,68,68,.1);
-    }
-    .cmp-card--neg:hover {
-      border-color: rgba(239,68,68,.35);
-      box-shadow: 0 0 64px rgba(239,68,68,.12),
-                  inset 0 0 0 1px rgba(239,68,68,.2);
+      border-color: transparent;
+      box-shadow: 0 0 48px rgba(239,68,68,.06);
     }
     .cmp-card--pos {
-      border-color: rgba(79,142,247,.15);
-      box-shadow: 0 0 48px rgba(79,142,247,.06),
-                  inset 0 0 0 1px rgba(79,142,247,.1);
+      border-color: transparent;
+      box-shadow: 0 0 48px rgba(79,142,247,.06);
     }
-    .cmp-card--pos:hover {
-      border-color: rgba(79,142,247,.35);
-      box-shadow: 0 0 64px rgba(79,142,247,.12),
-                  inset 0 0 0 1px rgba(79,142,247,.2);
+
+    /* luz giratória via pseudo-elemento com conic-gradient */
+    .cmp-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 14px;
+      z-index: -1;
+      animation: border-spin 4s linear infinite;
+    }
+    /* pseudo interno para mascarar o centro e deixar só a borda */
+    .cmp-card::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 11px;
+      background: var(--bg-elev-1);
+      z-index: -1;
+    }
+    .cmp-card--neg::before {
+      background: conic-gradient(
+        from var(--angle, 0deg),
+        transparent 0deg,
+        transparent 60deg,
+        rgba(239,68,68,.9) 120deg,
+        rgba(239,68,68,.4) 160deg,
+        transparent 200deg,
+        transparent 360deg
+      );
+    }
+    .cmp-card--pos::before {
+      background: conic-gradient(
+        from var(--angle, 0deg),
+        transparent 0deg,
+        transparent 60deg,
+        rgba(79,142,247,.9) 120deg,
+        rgba(79,142,247,.4) 160deg,
+        transparent 200deg,
+        transparent 360deg
+      );
+    }
+    @property --angle {
+      syntax: '<angle>';
+      initial-value: 0deg;
+      inherits: false;
+    }
+    @keyframes border-spin {
+      from { --angle: 0deg; }
+      to   { --angle: 360deg; }
     }
 
     /* cabeçalho do card */
@@ -1391,8 +1436,16 @@
       text-align: center;
       position: relative;
       overflow: hidden;
-      transition: background .35s var(--ease);
+      transition: background .35s var(--ease), transform .35s var(--ease);
     }
+    .sec4__stat .cmp-shine {
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(79,142,247,.10) 50%,
+        transparent 100%);
+    }
+    .sec4__stat:hover .cmp-shine { transform: translateX(120%) skewX(-15deg); }
+    .sec4__stat:hover { transform: translateY(-3px); }
     .sec4__stat:last-child { border-right: none; }
     .sec4__stat:hover { background: rgba(79,142,247,.04); }
     .sec4__stat-num {
@@ -1415,9 +1468,34 @@
       line-height: 1.5;
     }
 
+    /* brilho deslizante no hover — mesmo efeito dos stats da hero */
+    .cmp-shine {
+      position: absolute;
+      inset: 0;
+      border-radius: 12px;
+      transform: translateX(-120%) skewX(-15deg);
+      transition: transform .55s var(--ease);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .cmp-card--neg .cmp-shine {
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(239,68,68,.10) 50%,
+        transparent 100%);
+    }
+    .cmp-card--pos .cmp-shine {
+      background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(79,142,247,.12) 50%,
+        transparent 100%);
+    }
+    .cmp-card:hover .cmp-shine {
+      transform: translateX(120%) skewX(-15deg);
+    }
+    .cmp-card:hover { transform: translateY(-4px); }
+
     /* responsivo */
-    @media (max-width: 860px) {
-      .sec4 { padding: 80px 16px; }
       .sec4__grid { grid-template-columns: 1fr; }
       .sec4__stats { grid-template-columns: 1fr; }
       .sec4__stat { border-right: none; border-bottom: 1px solid var(--border-1); }
@@ -1557,6 +1635,7 @@
     <div class="sec2__grid">
 
       <div class="sec2__card">
+        <div class="cmp-shine"></div>
         <div class="sec2__num">54%</div>
         <p class="sec2__text">
           dos líderes empresariais acreditam que suas empresas
@@ -1567,6 +1646,7 @@
       </div>
 
       <div class="sec2__card">
+        <div class="cmp-shine"></div>
         <div class="sec2__num">3×</div>
         <p class="sec2__text">
           A IA triplica a produtividade em um terço das tarefas operacionais —
@@ -1577,6 +1657,7 @@
       </div>
 
       <div class="sec2__card">
+        <div class="cmp-shine"></div>
         <div class="sec2__num">33%</div>
         <p class="sec2__text">
           dos aplicativos empresariais terão IA agêntica integrada até 2028,
@@ -1640,6 +1721,7 @@
 
       <!-- Card negativo — sem IA -->
       <div class="cmp-card cmp-card--neg">
+        <div class="cmp-shine"></div>
         <div class="cmp-card__head">
           <div class="cmp-card__icon">⊖</div>
           <div class="cmp-card__title">Empresas sem IA na operação</div>
@@ -1670,6 +1752,7 @@
 
       <!-- Card positivo — com Rom55 -->
       <div class="cmp-card cmp-card--pos">
+        <div class="cmp-shine"></div>
         <div class="cmp-card__head">
           <div class="cmp-card__icon">△</div>
           <div class="cmp-card__title">Com a Rom55 e IA na estratégia</div>
@@ -1703,14 +1786,17 @@
     <!-- Stats bar abaixo dos cards -->
     <div class="sec4__stats">
       <div class="sec4__stat">
+        <div class="cmp-shine"></div>
         <div class="sec4__stat-num c-red">3×</div>
         <div class="sec4__stat-label">mais lento sem<br>automação de tarefas</div>
       </div>
       <div class="sec4__stat">
+        <div class="cmp-shine"></div>
         <div class="sec4__stat-num c-blue">40%</div>
         <div class="sec4__stat-label">ganho médio de<br>produtividade com IA</div>
       </div>
       <div class="sec4__stat">
+        <div class="cmp-shine"></div>
         <div class="sec4__stat-num c-wht">25%</div>
         <div class="sec4__stat-label">redução de custos<br>com IA integrada</div>
       </div>
