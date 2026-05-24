@@ -1907,6 +1907,287 @@
       @keyframes sec5-type { 0% { width: 0; } 100% { width: 220px; } }
     }
 
+    /* ═══════════════════════════════════════════
+       SEXTA DOBRA — JORNADA DE COMPRA
+    ═══════════════════════════════════════════ */
+    .sec6 {
+      position: relative;
+      z-index: 1;
+      padding: 120px 40px 100px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+    .sec6::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-2), transparent);
+    }
+
+    /* header da seção */
+    .sec6__head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .sec6__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue-logo);
+      margin-bottom: 20px;
+    }
+    .sec6__eyebrow::before, .sec6__eyebrow::after {
+      content: ""; width: 24px; height: 1px;
+      background: var(--blue-logo); opacity: .5;
+    }
+    .sec6__title {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 4vw, 52px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      color: var(--fg-primary);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .sec6__title span { color: var(--blue-logo); }
+    .sec6__sub {
+      font-size: 14px;
+      color: var(--fg-muted);
+      letter-spacing: .3px;
+    }
+
+    /* wrapper com scroll horizontal no mobile */
+    .sec6__scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 8px;
+    }
+    .sec6__scroll::-webkit-scrollbar { height: 4px; }
+    .sec6__scroll::-webkit-scrollbar-track { background: var(--border-1); }
+    .sec6__scroll::-webkit-scrollbar-thumb { background: var(--blue-logo); border-radius: 2px; }
+
+    /* tabela principal */
+    .jornada {
+      width: 100%;
+      min-width: 1100px;
+      border-collapse: collapse;
+      border: 1px solid var(--border-1);
+      font-size: 12px;
+    }
+
+    /* ── HEADER DE ESTÁGIOS ── */
+    .jornada__stage-row th {
+      padding: 0;
+      border: 1px solid var(--border-1);
+      vertical-align: top;
+    }
+    /* célula vazia topo-esquerda */
+    .jornada__corner {
+      width: 110px;
+      min-width: 110px;
+      background: var(--bg-elev-2);
+      border-right: 2px solid var(--border-2) !important;
+    }
+    .jornada__stage {
+      background: var(--bg-elev-1);
+      padding: 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      cursor: default;
+    }
+    /* linha colorida no topo de cada estágio */
+    .jornada__stage::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 3px;
+    }
+    .jornada__stage:nth-child(2)::before { background: #3B82F6; }
+    .jornada__stage:nth-child(3)::before { background: #6366F1; }
+    .jornada__stage:nth-child(4)::before { background: #8B5CF6; }
+    .jornada__stage:nth-child(5)::before { background: #EC4899; }
+    .jornada__stage:nth-child(6)::before { background: #F59E0B; }
+    .jornada__stage:nth-child(7)::before { background: #10B981; }
+    .jornada__stage:nth-child(8)::before { background: #60A5FA; }
+    .jornada__stage-inner {
+      padding: 16px 10px 14px;
+    }
+    .jornada__stage-num {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 1.5px;
+      color: var(--fg-muted-2);
+      margin-bottom: 4px;
+    }
+    .jornada__stage-name {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--fg-primary);
+    }
+    .jornada__stage-sub {
+      font-size: 10px;
+      color: var(--fg-muted-2);
+      margin-top: 3px;
+      letter-spacing: .3px;
+    }
+
+    /* ── SEÇÃO DE DIMENSÕES (PESSOAS) ── */
+    .jornada__section-header td {
+      padding: 8px 10px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--fg-muted);
+      background: var(--bg-overlay);
+      border: 1px solid var(--border-1);
+      border-left: none;
+    }
+    .jornada__section-label {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      width: 28px;
+      min-width: 28px;
+      text-align: center;
+      padding: 12px 6px !important;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--bg-elev-2) !important;
+      border-right: 2px solid var(--border-2) !important;
+      border: 1px solid var(--border-1);
+    }
+
+    /* ── CÉLULAS DE DIMENSÃO ── */
+    .jornada__dim-label {
+      width: 82px;
+      min-width: 82px;
+      padding: 12px 10px;
+      background: var(--bg-elev-1);
+      border: 1px solid var(--border-1);
+      border-right: 2px solid var(--border-2) !important;
+      vertical-align: top;
+    }
+    .jornada__dim-name {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: var(--fg-primary);
+      margin-bottom: 2px;
+    }
+    .jornada__dim-desc {
+      font-size: 9px;
+      color: var(--fg-muted-2);
+      letter-spacing: .3px;
+      line-height: 1.4;
+    }
+
+    /* ── CÉLULA DE CONTEÚDO ── */
+    .jornada__cell {
+      padding: 12px 10px;
+      border: 1px solid var(--border-1);
+      vertical-align: top;
+      background: var(--bg-base);
+      transition: background .25s var(--ease);
+      position: relative;
+    }
+    .jornada__cell:hover { background: rgba(79,142,247,.04); }
+
+    /* bullet list dentro da célula */
+    .jornada__cell ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .jornada__cell ul li {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+      font-size: 11px;
+      line-height: 1.45;
+      color: var(--fg-secondary);
+    }
+    .jornada__cell ul li::before {
+      content: "▸";
+      color: var(--blue-logo);
+      opacity: .6;
+      flex-shrink: 0;
+      font-size: 8px;
+      margin-top: 2px;
+    }
+    /* célula de sentimento com emojis */
+    .jornada__cell .feel {
+      font-size: 11px;
+      color: var(--fg-muted);
+      line-height: 1.5;
+    }
+    .jornada__cell .feel em {
+      font-style: normal;
+      color: var(--fg-secondary);
+    }
+    /* destaque crítico */
+    .jornada__cell .crit {
+      display: inline-flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--fg-muted);
+      line-height: 1.45;
+    }
+    .jornada__cell .crit::before {
+      content: "⚠";
+      color: #F59E0B;
+      font-size: 10px;
+      flex-shrink: 0;
+    }
+    /* tag de canal */
+    .jtag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 7px;
+      border-radius: 9999px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      margin: 2px 2px 2px 0;
+    }
+    .jtag--blue  { background: rgba(79,142,247,.12); border: 1px solid rgba(79,142,247,.25); color: var(--blue-logo); }
+    .jtag--gray  { background: rgba(184,192,204,.08); border: 1px solid rgba(184,192,204,.2); color: var(--fg-muted); }
+    .jtag--green { background: rgba(46,204,64,.08); border: 1px solid rgba(46,204,64,.2); color: #2ECC40; }
+
+    /* ── SEÇÃO INTERAÇÕES (linha inferior) ── */
+    .jornada__inter-label {
+      background: var(--bg-elev-2) !important;
+      border-right: 2px solid var(--border-2) !important;
+      color: #2ECC40 !important;
+    }
+
+    /* highlight de funil — fundo por estágio */
+    .jornada__cell.topo   { border-top: 2px solid rgba(59,130,246,.25); }
+    .jornada__cell.meio   { border-top: 2px solid rgba(139,92,246,.25); }
+    .jornada__cell.fundo  { border-top: 2px solid rgba(236,72,153,.25); }
+    .jornada__cell.pos    { border-top: 2px solid rgba(16,185,129,.25); }
+
+    @media (max-width: 860px) {
+      .sec6 { padding: 80px 12px 80px; }
+    }
+
   </style>
 </head>
 
@@ -2287,6 +2568,285 @@
       <div class="sec5__cta-bar" data-sec5></div>
 
     </div>
+  </section>
+
+  <!-- ═══════════ SEXTA DOBRA — JORNADA DE COMPRA ═══════════ -->
+  <section class="sec6" id="jornada">
+
+    <div class="sec6__head">
+      <div class="sec6__eyebrow">Customer Journey Map · Rom55 · ICP Growth Marketing</div>
+      <h2 class="sec6__title">Mapa da <span>Jornada de Compra</span></h2>
+      <p class="sec6__sub">Como o seu cliente chega, decide e escala com a Rom55 — da descoberta à indicação</p>
+    </div>
+
+    <div class="sec6__scroll">
+    <table class="jornada">
+
+      <!-- ══ HEADER DE ESTÁGIOS ══ -->
+      <thead>
+        <tr class="jornada__stage-row">
+          <th class="jornada__corner" colspan="2"></th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">01</div>
+              <div class="jornada__stage-name">Descoberta</div>
+              <div class="jornada__stage-sub">primeira exposição</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">02</div>
+              <div class="jornada__stage-name">Atenção</div>
+              <div class="jornada__stage-sub">construção de autoridade</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">03</div>
+              <div class="jornada__stage-name">Consideração</div>
+              <div class="jornada__stage-sub">qualificação · agendamento</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">04</div>
+              <div class="jornada__stage-name">Decisão</div>
+              <div class="jornada__stage-sub">diagnóstico · fechamento</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">05</div>
+              <div class="jornada__stage-name">Experiência</div>
+              <div class="jornada__stage-sub">onboarding · entrega</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">06</div>
+              <div class="jornada__stage-name">Recompra</div>
+              <div class="jornada__stage-sub">upsell · expansão</div>
+            </div>
+          </th>
+          <th class="jornada__stage">
+            <div class="jornada__stage-inner">
+              <div class="jornada__stage-num">07</div>
+              <div class="jornada__stage-name">Indicação</div>
+              <div class="jornada__stage-sub">cases · advocacy</div>
+            </div>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <!-- ══ SEÇÃO: PESSOAS ══ -->
+        <tr class="jornada__section-header">
+          <td class="jornada__section-label jornada__inter-label" rowspan="5"
+              style="color:var(--fg-muted)!important;background:var(--bg-elev-2)!important;">PESSOAS</td>
+          <td colspan="8" style="padding:6px 10px;font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--fg-muted-2);background:var(--bg-overlay);border:1px solid var(--border-1);">
+            da descoberta à indicação
+          </td>
+        </tr>
+
+        <!-- ETAPA DO FUNIL -->
+        <tr>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Etapa do Funil</div>
+            <div class="jornada__dim-desc">onde o cliente está</div>
+          </td>
+          <td class="jornada__cell topo"><ul><li>Tráfego pago + conteúdo orgânico</li><li>Redes sociais · Google Ads</li></ul></td>
+          <td class="jornada__cell topo"><ul><li>VSL 12–15min · Mini Webinar</li><li>Conteúdo de autoridade</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Formulário de qualificação</li><li>Breakout vídeos · agendamento</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Call de diagnóstico 60–90min</li><li>Proposta personalizada</li></ul></td>
+          <td class="jornada__cell fundo"><ul><li>Onboarding estruturado</li><li>Entrega → Raio-X / Ignição</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Upsell na escada de produtos</li><li>Expansão de escopo</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Guilda · cases · indicação</li><li>Programa de parceria</li></ul></td>
+        </tr>
+
+        <!-- AÇÕES -->
+        <tr>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Ações</div>
+            <div class="jornada__dim-desc">o que o cliente faz</div>
+          </td>
+          <td class="jornada__cell topo"><ul><li>Vê anúncio no feed</li><li>Clica sem compromisso</li></ul></td>
+          <td class="jornada__cell topo"><ul><li>Assiste a VSL (inteiro ou parcialmente)</li><li>Avalia autoridade e promessa</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Preenche formulário</li><li>Informa faturamento</li><li>Reserva call · recebe breakdowns</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Entra na call · responde diagnóstico</li><li>Ouve pitch · decide compra ou adiamento</li></ul></td>
+          <td class="jornada__cell fundo"><ul><li>Assina · envia materiais</li><li>Participa das reuniões</li><li>Recebe entregas Raio-X</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Avalia novo escopo</li><li>Sobe na escala Raio-X</li><li>Engaja com time Rom55</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Indica pares · participa da Guilda</li><li>Vira case público</li><li>Gera conteúdo de autoridade</li></ul></td>
+        </tr>
+
+        <!-- SENTIMENTOS -->
+        <tr>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Sentimentos</div>
+            <div class="jornada__dim-desc">estado emocional</div>
+          </td>
+          <td class="jornada__cell topo">
+            <p class="feel"><em>Curioso mas cético</em><br>"já vi mil gurus"<br>sobrecarregado de ofertas</p>
+          </td>
+          <td class="jornada__cell topo">
+            <p class="feel"><em>Cauteloso</em><br>"pronto para ser decepcionado"<br>atenção curta · janela curta</p>
+          </td>
+          <td class="jornada__cell meio">
+            <p class="feel"><em>Esperançoso</em> quanto ao ROI<br><em>Desconfiado</em> "já me queimaram"</p>
+          </td>
+          <td class="jornada__cell meio">
+            <p class="feel"><em>Confrontado</em> com próprios problemas<br><em>Vulnerável</em> · pressionado a decidir</p>
+          </td>
+          <td class="jornada__cell fundo">
+            <p class="feel"><em>Expectativa alta</em> por resultado rápido<br><em>Cauteloso</em> com engajamento do time</p>
+          </td>
+          <td class="jornada__cell pos">
+            <p class="feel"><em>Confiante</em> · se viu no valor<br><em>Pragmático</em> · resignado se não viu</p>
+          </td>
+          <td class="jornada__cell pos">
+            <p class="feel"><em>Leal · orgulhoso</em><br><em>Defensor</em> da metodologia</p>
+          </td>
+        </tr>
+
+        <!-- METAS -->
+        <tr>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Metas</div>
+            <div class="jornada__dim-desc">o que o cliente quer alcançar</div>
+          </td>
+          <td class="jornada__cell topo"><ul><li>Decidir em segundos se vale mais 10s de atenção</li></ul></td>
+          <td class="jornada__cell topo"><ul><li>Entender se a Rom55 é diferente do resto</li><li>Avaliar se a promessa é real</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Decidir se vale ir à call</li><li>Avaliar risco e retorno</li></ul></td>
+          <td class="jornada__cell meio"><ul><li>Clareza absoluta: o quê, quanto, prazo, garantia</li></ul></td>
+          <td class="jornada__cell fundo"><ul><li>Ver o ganho com clareza</li><li>Sentir progresso, não consultoria</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Manter/acelerar tração</li><li>Não recair no improviso</li></ul></td>
+          <td class="jornada__cell pos"><ul><li>Pertencer a rede de referência</li><li>Ter visibilidade como líder</li></ul></td>
+        </tr>
+
+        <!-- PONTOS CRÍTICOS -->
+        <tr>
+          <td class="jornada__section-label" style="writing-mode:vertical-rl;transform:rotate(180deg);background:var(--bg-elev-2)!important;border-right:2px solid var(--border-2)!important;border:1px solid var(--border-1);padding:12px 6px;font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--fg-muted);text-align:center;"></td>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Pontos Críticos</div>
+            <div class="jornada__dim-desc">dores · objeções · barreiras</div>
+          </td>
+          <td class="jornada__cell topo"><p class="crit">Já contestou agência e não viu resultado; ruído de mercado</p></td>
+          <td class="jornada__cell topo"><p class="crit">Público não-afluente vê design simples como scam; atenção curta</p></td>
+          <td class="jornada__cell meio"><p class="crit">"Não sei por onde começar"; medo de mais um gasto improdutivo</p></td>
+          <td class="jornada__cell meio"><p class="crit">"Eu sou o melhor vendedor." Objeções: preço, tempo, "deixa eu pensar"</p></td>
+          <td class="jornada__cell fundo"><p class="crit">Medo de protocolo sem transformação; time interno não engaja</p></td>
+          <td class="jornada__cell pos"><p class="crit">Dúvida se novo degrau entrega proporcional ao salto de preço</p></td>
+          <td class="jornada__cell pos"><p class="crit">Hesita em indicar se resultado foi misto</p></td>
+        </tr>
+
+        <!-- ══ SEÇÃO: INTERAÇÕES ══ -->
+        <tr>
+          <td class="jornada__section-label jornada__inter-label" rowspan="2"
+              style="writing-mode:vertical-rl;transform:rotate(180deg);background:var(--bg-elev-2)!important;border-right:2px solid rgba(46,204,64,.4)!important;border:1px solid var(--border-1);padding:12px 6px;font-family:var(--font-mono);font-size:9px;letter-spacing:2px;text-transform:uppercase;color:#2ECC40;text-align:center;">INTERAÇÕES</td>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Pontos de Contato</div>
+            <div class="jornada__dim-desc">canais e artefatos</div>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">Meta Ads</span>
+            <span class="jtag jtag--blue">Instagram</span>
+            <span class="jtag jtag--gray">YouTube</span>
+            <span class="jtag jtag--gray">Orgânico</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">VSL 12–15min</span>
+            <span class="jtag jtag--gray">Landing Page</span>
+            <span class="jtag jtag--gray">Thumbnails</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">Formulário</span>
+            <span class="jtag jtag--blue">WhatsApp</span>
+            <span class="jtag jtag--gray">E-mail</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">Call Diagnóstico</span>
+            <span class="jtag jtag--gray">Zoom · Gravação</span>
+            <span class="jtag jtag--gray">Proposta</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">Slack/Notion</span>
+            <span class="jtag jtag--gray">Reuniões</span>
+            <span class="jtag jtag--gray">Dashboard</span>
+            <span class="jtag jtag--gray">Raio-X</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--blue">Closer</span>
+            <span class="jtag jtag--gray">Proposta Upgrade</span>
+            <span class="jtag jtag--gray">Review</span>
+          </td>
+          <td class="jornada__cell">
+            <span class="jtag jtag--green">Guilda</span>
+            <span class="jtag jtag--gray">Cases · Lives</span>
+            <span class="jtag jtag--gray">Depoimentos</span>
+          </td>
+        </tr>
+
+        <!-- ATIVIDADES -->
+        <tr>
+          <td class="jornada__dim-label">
+            <div class="jornada__dim-name">Atividades</div>
+            <div class="jornada__dim-desc">MKT · SDR · Closer · CS</div>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>MKT: anúncios de Engenharia de Receita</li>
+              <li>Distribui conteúdo carrossel, shorts, Org</li>
+              <li>Outbound: SDR (1h/dia · 6 até set/26)</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>MKT: produz VSL com os 6 passos</li>
+              <li>Haynes Summary · CTA · Testimonials</li>
+              <li>Chaptering por seção</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>MKT: Breakouts + confirmation page</li>
+              <li>SDR: qualifica por ICP + faixa A/B/C/D</li>
+              <li>Agenda call · confirma presença</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>Closer: conduz call consultivo</li>
+              <li>Apresenta diagnóstico simultâneo</li>
+              <li>Pede fechamento · SDR envia proposta</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>Produto: mapeia jornada · identifica gap</li>
+              <li>CS: agenda do cliente</li>
+              <li>Dados: mostra progresso mensurável</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>Closer: rearranjo + venda do upgrade</li>
+              <li>Produto: roda a Guilda como loop de MQL</li>
+              <li>MKT: captura cases e depoimentos</li>
+            </ul>
+          </td>
+          <td class="jornada__cell">
+            <ul>
+              <li>Comunidade: eventos · lives · rituais</li>
+              <li>MKT: amplifica cases com co-autoria</li>
+              <li>Produto: programa de parceria formal</li>
+            </ul>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+    </div>
+
   </section>
 
   <script>
