@@ -117,7 +117,7 @@
 
     /* ── Divisor shimmer animado entre dobras ── */
     .sec2::before, .sec3::before, .sec4::before,
-    .sec5::before, .sec6::before {
+    .sec5::before, .sec6::before, .sec-maq::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0;
@@ -136,7 +136,7 @@
     }
     .sec2.in-view::before, .sec3.in-view::before,
     .sec4.in-view::before, .sec5.in-view::before,
-    .sec6.in-view::before {
+    .sec6.in-view::before, .sec-maq.in-view::before {
       opacity: 1;
       animation: divider-shimmer 1.8s ease forwards .3s;
     }
@@ -145,7 +145,7 @@
       20%  { opacity: 1; }
       100% { background-position: 200% 0; opacity: .4; }
     }
-    .sec2, .sec3, .sec4, .sec5, .sec6 {
+    .sec2, .sec3, .sec4, .sec5, .sec6, .sec-maq {
       opacity: 0;
       transform: translateY(60px);
       transition: opacity .9s cubic-bezier(.4,0,.2,1),
@@ -156,7 +156,7 @@
     }
     .sec2.in-view, .sec3.in-view,
     .sec4.in-view, .sec5.in-view,
-    .sec6.in-view {
+    .sec6.in-view, .sec-maq.in-view {
       opacity: 1;
       transform: translateY(0);
     }
@@ -2236,6 +2236,217 @@
       .sec6 { padding: 80px 12px 80px; }
     }
 
+    /* ═══════════════════════════════════════════
+       NOVA TERCEIRA DOBRA — A MÁQUINA COMPLETA
+    ═══════════════════════════════════════════ */
+    .sec-maq {
+      position: relative;
+      z-index: 1;
+      padding: 120px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .sec-maq::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-2), transparent);
+    }
+    /* glow central */
+    .sec-maq__bg-glow {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 50% 50%,
+          rgba(79,142,247,.07) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* layout 2 colunas */
+    .sec-maq__inner {
+      display: flex;
+      flex-direction: column;
+      gap: 56px;
+      position: relative;
+      z-index: 1;
+    }
+    .sec-maq__top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    /* título dos painéis de engrenagens */
+    .sec-maq__panels-head {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .sec-maq__panels-title {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3vw, 36px);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: -0.5px;
+      color: var(--fg-primary);
+      margin-bottom: 10px;
+    }
+    .sec-maq__panels-title span { color: var(--blue-logo); }
+    .sec-maq__panels-sub {
+      font-size: 14px;
+      color: var(--fg-muted);
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* ── COLUNA ESQUERDA — copy ── */
+    .sec-maq__copy { }
+    .sec-maq__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--blue-logo);
+      margin-bottom: 28px;
+    }
+    .sec-maq__eyebrow::before {
+      content: ""; width: 28px; height: 1px;
+      background: var(--blue-logo);
+    }
+    .sec-maq__title {
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4.5vw, 62px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1.5px;
+      line-height: .95;
+      color: var(--fg-primary);
+      margin-bottom: 32px;
+    }
+    .sec-maq__title .t-blue {
+      display: block;
+      background: linear-gradient(90deg, #4F8EF7, #93C5FD);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .sec-maq__body {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--fg-muted);
+      margin-bottom: 40px;
+    }
+    .sec-maq__body strong { color: var(--fg-secondary); font-weight: 600; }
+
+    /* lista de engrenagens */
+    .sec-maq__list {
+      list-style: none;
+      padding: 0; margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sec-maq__list li {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 14px;
+      color: var(--fg-secondary);
+      padding: 12px 16px;
+      border: 1px solid var(--border-1);
+      background: var(--bg-elev-1);
+      border-radius: 6px;
+      transition: border-color .3s var(--ease), background .3s var(--ease),
+                  transform .3s var(--ease);
+      position: relative;
+      overflow: hidden;
+    }
+    .sec-maq__list li .cmp-shine {
+      background: linear-gradient(90deg,
+        transparent, rgba(79,142,247,.08), transparent);
+    }
+    .sec-maq__list li:hover .cmp-shine {
+      transform: translateX(120%) skewX(-15deg);
+    }
+    .sec-maq__list li:hover {
+      border-color: rgba(79,142,247,.3);
+      background: rgba(79,142,247,.04);
+      transform: translateX(6px);
+    }
+    .sec-maq__gear-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--bg-elev-2);
+      border: 1px solid var(--border-2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+      transition: border-color .3s var(--ease), box-shadow .3s var(--ease);
+      position: relative; z-index: 1;
+    }
+    .sec-maq__list li:hover .sec-maq__gear-icon {
+      border-color: rgba(79,142,247,.5);
+      box-shadow: 0 0 12px rgba(79,142,247,.2);
+    }
+    .sec-maq__list-text { position: relative; z-index: 1; line-height: 1.4; }
+    .sec-maq__list-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--fg-primary);
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+    .sec-maq__list-text span {
+      font-size: 12px;
+      color: var(--fg-muted-2);
+    }
+
+    /* ── COLUNA DIREITA — visual da máquina ── */
+    .sec-maq__visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .sec-maq__svg-wrap {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+
+    /* Animações do SVG */
+    @keyframes gear-cw  { from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+    @keyframes gear-ccw { from { transform: rotate(0deg);   } to { transform: rotate(-360deg); } }
+    @keyframes gear-slow{ from { transform: rotate(0deg);   } to { transform: rotate(360deg);  } }
+    @keyframes pulse-dot{ 0%,100% { opacity:.4; r: 4px; } 50% { opacity:1; r: 6px; } }
+    @keyframes flow-dash{
+      0%   { stroke-dashoffset: 200; opacity: 0; }
+      20%  { opacity: 1; }
+      100% { stroke-dashoffset: 0;   opacity: 0; }
+    }
+    .gear-cw  { animation: gear-cw  8s linear infinite; transform-origin: center; }
+    .gear-ccw { animation: gear-ccw 6s linear infinite; transform-origin: center; }
+    .gear-slow{ animation: gear-slow 14s linear infinite; transform-origin: center; }
+    .flow-line{ animation: flow-dash 2.4s ease-in-out infinite; }
+    .flow-line:nth-child(2){ animation-delay: .8s; }
+    .flow-line:nth-child(3){ animation-delay: 1.6s; }
+
+    /* responsivo */
+    @media (max-width: 960px) {
+      .sec-maq { padding: 80px 32px; }
+      .sec-maq__top { grid-template-columns: 1fr; gap: 32px; }
+      .sec-maq__top > div:last-child { display: none; }
+      .sec-maq__svg-wrap { max-width: 360px; margin: 0 auto; }
+    }
+    @media (max-width: 560px) {
+      .sec-maq { padding: 64px 12px; }
+      .sec-maq__title { font-size: clamp(28px, 9vw, 44px); }
+    }
+
   </style>
 </head>
 
@@ -2358,7 +2569,8 @@
       <div class="sec6__eyebrow">Customer Journey Map · Rom55 · ICP Growth Marketing</div>
       <h2 class="sec6__title">Mapa da <span>Jornada de Compra</span></h2>
       <p class="sec6__sub">Estas 7 fases abaixo são a forma como nós, da Rom55, enxergamos a jornada de compra do seu cliente, desde o momento em que ele te conhece, ou seja, a fase de descoberta, até a fase de indicação, que é quando ele teve uma experiência tão boa com você, que começa a te indicar para outras pessoas.</p>
-      <p class="sec6__sub">Não só enxergamos desta forma, como também implementamos cada uma dessas etapas para cada um de nossos clientes e acompanhamos de perto o andamento delas, pois acreditamos que essa é a melhor forma no mercado hoje, para um negócio se manter sólido por muito tempo e conseguir escalar.</p>
+      <p class="sec6__sub">Não só enxergamos desta forma, como também implementamos para cada um dos nossos clientes, em cada uma dessas etapas, tudo o que for necessário para que ela funcione da melhor forma possível — seja a implantação de um sistema como um CRM, por exemplo, ferramentas de monitoramento como um Dashboard, desenvolvimento de Website, Tráfego Pago, treinamento para o time de vendas, automatizações com IA, entre outros.</p>
+      <p class="sec6__sub">Este é um grande diferencial nosso: percebemos, por experiência própria, que o problema de uma empresa não crescer raramente está em um único ponto — por isso é essencial analisar o todo e acompanhar de perto cada uma dessas etapas, pois acreditamos que essa é a melhor forma no mercado hoje para um negócio se manter sólido por muito tempo e conseguir escalar.</p>
     </div>
 
     <div class="sec6__scroll">
@@ -2630,14 +2842,269 @@
 
   </section>
 
+  <!-- ═══════════ NOVA TERCEIRA DOBRA — A MÁQUINA COMPLETA ═══════════ -->
+  <section class="sec-maq">
+    <div class="sec-maq__bg-glow" aria-hidden="true"></div>
+
+    <div class="sec-maq__inner">
+
+      <!-- Top: copy + lista lado a lado -->
+      <div class="sec-maq__top">
+        <!-- Coluna esquerda: copy -->
+        <div class="sec-maq__copy">
+
+        <div class="sec-maq__eyebrow">Por que analisamos a jornada toda</div>
+
+        <h2 class="sec-maq__title">
+          Cada peça importa.<br>
+          <span class="t-blue">A máquina precisa girar junto.</span>
+        </h2>
+
+        <p class="sec-maq__body">
+          Para que um cliente consiga passar por essas 7 etapas de uma compra, seja de um produto ou de um serviço que você oferece, é preciso que você tenha implantado no seu negócio um ecossistema de vendas muito bem estruturado e otimizado, capaz de guiar o seu cliente e conduzi-lo por cada uma dessas etapas.
+        </p>
+        <p class="sec-maq__body">
+          Tráfego pago, site, atendimento, vendas — cada um desses elementos, isolado,
+          parece funcionar. Mas quando a empresa não cresce, a culpa sempre recai sobre
+          uma única engrenagem. <strong>O problema raramente é uma peça só.</strong>
+        </p>
+
+        <ul class="sec-maq__list">
+          <li>
+            <div class="cmp-shine"></div>
+            <div class="sec-maq__gear-icon">📣</div>
+            <div class="sec-maq__list-text">
+              <strong>Tráfego Pago</strong>
+              <span>Atrai o público certo — mas não converte sozinho</span>
+            </div>
+          </li>
+          <li>
+            <div class="cmp-shine"></div>
+            <div class="sec-maq__gear-icon">🖥</div>
+            <div class="sec-maq__list-text">
+              <strong>Site & Landing Page</strong>
+              <span>Converte o interesse — mas depende de quem chega</span>
+            </div>
+          </li>
+          <li>
+            <div class="cmp-shine"></div>
+            <div class="sec-maq__gear-icon">💬</div>
+            <div class="sec-maq__list-text">
+              <strong>Atendimento & SDR</strong>
+              <span>Qualifica e aquece — mas precisa de lead certo</span>
+            </div>
+          </li>
+          <li>
+            <div class="cmp-shine"></div>
+            <div class="sec-maq__gear-icon">🎯</div>
+            <div class="sec-maq__list-text">
+              <strong>Time de Vendas</strong>
+              <span>Fecha — mas só quando tudo antes funcionou</span>
+            </div>
+          </li>
+          <li>
+            <div class="cmp-shine"></div>
+            <div class="sec-maq__gear-icon">⚙️</div>
+            <div class="sec-maq__list-text">
+              <strong>Operação & Entrega</strong>
+              <span>Retém e gera indicação — o motor do crescimento</span>
+            </div>
+          </li>
+        </ul>
+
+      </div><!-- /sec-maq__copy -->
+
+        <!-- Coluna direita vazia no top (balanceia o grid) -->
+        <div></div>
+      </div><!-- /sec-maq__top -->
+
+      <!-- Cabeçalho dos painéis -->
+      <div class="sec-maq__panels-head">
+        <h3 class="sec-maq__panels-title">
+          O que muda quando tudo está <span>interligado e funcionando em harmonia</span>
+        </h3>
+        <p class="sec-maq__panels-sub">
+          À esquerda, o cenário mais comum: áreas que operam no próprio ritmo, sem conexão.
+          À direita, o que a Rom55 constrói para cada cliente — um sistema onde cada engrenagem
+          alimenta a próxima e a máquina gira em harmonia.
+        </p>
+      </div>
+
+      <!-- Dois painéis lado a lado -->
+      <div class="sec-maq__visual" style="flex-direction:column;gap:0;width:100%">
+
+        <!-- Dois painéis lado a lado -->
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%">
+
+          <!-- PAINEL ESQUERDO: DESALINHADO (vermelho) -->
+          <div style="background:rgba(63,22,22,.25);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:16px 12px 20px;text-align:center;position:relative;overflow:hidden">
+            <!-- shimmer vermelho -->
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#EF4444,transparent);opacity:.6"></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#EF4444;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px">
+              <span style="width:16px;height:1px;background:#EF4444;opacity:.5;display:inline-block"></span>
+              Desalinhado
+              <span style="width:16px;height:1px;background:#EF4444;opacity:.5;display:inline-block"></span>
+            </div>
+            <svg id="svg-chaos" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px">
+              <defs>
+                <filter id="red-glow">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="2.5" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+              </defs>
+              <!-- Engrenagem grande centro-esquerda — gira livremente -->
+              <g id="cg1" transform="translate(80,110)">
+                <circle r="44" fill="rgba(63,22,22,.6)" stroke="rgba(239,68,68,.4)" stroke-width="1.5"/>
+                <g fill="rgba(239,68,68,.6)">
+                  <rect x="-4" y="-51" width="8" height="12" rx="2"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(45)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(90)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(135)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(180)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(225)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(270)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(315)"/>
+                </g>
+                <circle r="20" fill="rgba(63,22,22,.8)" stroke="rgba(239,68,68,.25)" stroke-width="1"/>
+                <text y="5" text-anchor="middle" font-size="16">⚙</text>
+              </g>
+              <!-- Engrenagem pequena top-right — gira em velocidade errada -->
+              <g id="cg2" transform="translate(162,62)">
+                <circle r="28" fill="rgba(63,22,22,.5)" stroke="rgba(239,68,68,.3)" stroke-width="1.2"/>
+                <g fill="rgba(239,68,68,.5)">
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(60)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(120)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(180)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(240)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(300)"/>
+                </g>
+                <circle r="12" fill="rgba(63,22,22,.8)" stroke="rgba(239,68,68,.2)" stroke-width="1"/>
+                <text y="4" text-anchor="middle" font-size="10">📣</text>
+              </g>
+              <!-- Engrenagem media bottom-right — travada / parada -->
+              <g id="cg3" transform="translate(168,168)">
+                <circle r="32" fill="rgba(63,22,22,.4)" stroke="rgba(239,68,68,.2)" stroke-width="1" stroke-dasharray="4 3"/>
+                <g fill="rgba(239,68,68,.3)">
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(51.4)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(102.8)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(154.2)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(205.6)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(257)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(308.4)"/>
+                </g>
+                <circle r="14" fill="rgba(63,22,22,.8)" stroke="rgba(239,68,68,.2)" stroke-width="1"/>
+                <text y="4" text-anchor="middle" font-size="11">🎯</text>
+                <!-- X de travado -->
+                <line x1="-8" y1="-8" x2="8" y2="8" stroke="#EF4444" stroke-width="1.5" opacity=".6" transform="translate(20,-20)"/>
+                <line x1="8" y1="-8" x2="-8" y2="8" stroke="#EF4444" stroke-width="1.5" opacity=".6" transform="translate(20,-20)"/>
+              </g>
+              <!-- Linhas quebradas / sem conexão -->
+              <line x1="108" y1="80" x2="138" y2="68" stroke="rgba(239,68,68,.2)" stroke-width="1" stroke-dasharray="3 5"/>
+              <line x1="124" y1="140" x2="140" y2="152" stroke="rgba(239,68,68,.2)" stroke-width="1" stroke-dasharray="3 5"/>
+              <!-- Seta de conflito -->
+              <text x="38" y="60" font-size="16" opacity=".4">⚠</text>
+              <text x="18" y="160" font-size="14" opacity=".3">⚠</text>
+            </svg>
+            <div style="margin-top:12px">
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#EF4444">Engrenagens soltas</div>
+              <div style="font-size:12px;color:rgba(239,68,68,.6);margin-top:4px;line-height:1.4">Cada área puxa para um lado.<br>A máquina não avança.</div>
+            </div>
+          </div>
+
+          <!-- PAINEL DIREITO: ALINHADO (azul) -->
+          <div style="background:rgba(13,18,48,.6);border:1px solid rgba(79,142,247,.25);border-radius:10px;padding:16px 12px 20px;text-align:center;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(79,142,247,.08)">
+            <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#4F8EF7,#93C5FD,transparent)"></div>
+            <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#4F8EF7;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:8px">
+              <span style="width:16px;height:1px;background:#4F8EF7;opacity:.5;display:inline-block"></span>
+              Alinhado
+              <span style="width:16px;height:1px;background:#4F8EF7;opacity:.5;display:inline-block"></span>
+            </div>
+            <svg id="svg-sync" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:200px">
+              <defs>
+                <filter id="blue-glow">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+                  <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <linearGradient id="sg1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#4F8EF7"/>
+                  <stop offset="100%" stop-color="#1D4ED8"/>
+                </linearGradient>
+              </defs>
+              <!-- Engrenagem grande centro — referência de velocidade R=44 -->
+              <g id="sg1g" transform="translate(80,110)">
+                <circle r="44" fill="rgba(13,18,48,.8)" stroke="url(#sg1)" stroke-width="1.5" filter="url(#blue-glow)"/>
+                <g fill="#4F8EF7" opacity=".9">
+                  <rect x="-4" y="-51" width="8" height="12" rx="2"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(45)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(90)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(135)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(180)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(225)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(270)"/>
+                  <rect x="-4" y="-51" width="8" height="12" rx="2" transform="rotate(315)"/>
+                </g>
+                <circle r="20" fill="rgba(79,142,247,.15)" stroke="rgba(79,142,247,.4)" stroke-width="1"/>
+                <text y="5" text-anchor="middle" font-size="16" fill="#4F8EF7">⚙</text>
+              </g>
+              <!-- Engrenagem pequena top-right — R=28, gira -44/28× mais rápido = engrenada -->
+              <!-- Posição: distância ao centro = 44+28=72 em ângulo ~-45° de (80,110) → (131,59) -->
+              <g id="sg2g" transform="translate(131,59)">
+                <circle r="28" fill="rgba(13,18,48,.8)" stroke="#60A5FA" stroke-width="1.2"/>
+                <g fill="#60A5FA" opacity=".85">
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(60)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(120)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(180)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(240)"/>
+                  <rect x="-3" y="-34" width="6" height="8" rx="1.5" transform="rotate(300)"/>
+                </g>
+                <circle r="12" fill="rgba(79,142,247,.1)" stroke="rgba(79,142,247,.3)" stroke-width="1"/>
+                <text y="4" text-anchor="middle" font-size="10" fill="#93C5FD">📣</text>
+              </g>
+              <!-- Engrenagem media bottom-right — R=32, toca a grande -->
+              <!-- Posição: 44+32=76 em ângulo ~+45° → (134, 164) -->
+              <g id="sg3g" transform="translate(134,164)">
+                <circle r="32" fill="rgba(13,18,48,.8)" stroke="#93C5FD" stroke-width="1.2"/>
+                <g fill="#93C5FD" opacity=".8">
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(51.4)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(102.8)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(154.2)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(205.6)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(257)"/>
+                  <rect x="-3" y="-38" width="6" height="9" rx="1.5" transform="rotate(308.4)"/>
+                </g>
+                <circle r="14" fill="rgba(79,142,247,.1)" stroke="rgba(79,142,247,.3)" stroke-width="1"/>
+                <text y="4" text-anchor="middle" font-size="11" fill="#93C5FD">🎯</text>
+              </g>
+              <!-- Pontos de contato / encaixe -->
+              <circle cx="113" cy="77" r="3.5" fill="#4F8EF7" filter="url(#blue-glow)" opacity=".9"/>
+              <circle cx="115" cy="143" r="3.5" fill="#93C5FD" filter="url(#blue-glow)" opacity=".9"/>
+              <!-- Partículas de fluxo -->
+              <circle cx="113" cy="77" r="6" fill="rgba(79,142,247,.15)" opacity=".7"/>
+              <circle cx="115" cy="143" r="6" fill="rgba(147,197,253,.15)" opacity=".7"/>
+            </svg>
+            <div style="margin-top:12px">
+              <div style="font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;color:#4F8EF7">Máquina sincronizada</div>
+              <div style="font-size:12px;color:var(--fg-muted);margin-top:4px;line-height:1.4">Cada área alimenta a próxima.<br>O negócio escala com consistência.</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- ═══════════ SEGUNDA DOBRA — STATS DE MERCADO ═══════════ -->
   <section class="sec2">
 
     <div class="sec2__head">
       <div class="sec2__eyebrow">Contexto de mercado</div>
       <h2 class="sec2__title">
-        O mercado está mudando.<br>
-        <strong>A pergunta que fica é: sua empresa tem acompanhado essas mudanças?</strong>
+        O mercado está mudando, e nunca foi tão fácil, com o auxílio da IA, otimizar, automatizar e acelerar tarefas, mesmo com a redução de times — e a pergunta que fica é: <strong>sua empresa tem acompanhado essas mudanças?</strong>
       </h2>
     </div>
 
@@ -3430,7 +3897,7 @@
 
     /* ── Parallax / fade-in nas dobras ── */
     (function () {
-      const sections = document.querySelectorAll('.sec2,.sec3,.sec4,.sec5,.sec6');
+      const sections = document.querySelectorAll('.sec2,.sec3,.sec4,.sec5,.sec6,.sec-maq');
       if (!sections.length) return;
 
       const obs = new IntersectionObserver((entries) => {
@@ -3445,6 +3912,46 @@
       }, { threshold: .12, rootMargin: '0px 0px -60px 0px' });
 
       sections.forEach(s => obs.observe(s));
+    })();
+
+
+    /* ── Engrenagens sincronizadas (painel direito) e caóticas (painel esquerdo) ── */
+    (function() {
+      let angle = 0;
+      const RAD = Math.PI / 180;
+
+      // Relações de transmissão baseadas nos raios reais
+      // Grande (R=44): velocidade base 1×
+      // Pequena top-right (R=28): ratio = 44/28 = 1.571 — gira oposto
+      // Media bottom-right (R=32): ratio = 44/32 = 1.375 — gira oposto
+
+      function setGearTransform(id, centerX, centerY, angleDeg) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.setAttribute('transform',
+          `translate(${centerX},${centerY}) rotate(${angleDeg})`);
+      }
+
+      function tick() {
+        angle += 0.4; // velocidade base
+
+        // ── PAINEL ALINHADO (azul) ──
+        setGearTransform('sg1g',  80, 110,  angle);               // grande: CW
+        setGearTransform('sg2g', 131,  59, -angle * (44/28));     // pequena: CCW, mais rápida
+        setGearTransform('sg3g', 134, 164, -angle * (44/32));     // media: CCW
+
+        // ── PAINEL DESALINHADO (vermelho) ──
+        // Grande gira normal
+        setGearTransform('cg1', 80, 110,  angle);
+        // Pequena gira em velocidade errada (sem respeitar ratio)
+        setGearTransform('cg2', 162, 62,  angle * 2.3);   // rápida demais — caótica
+        // Media permanece parada / travada (sem girar)
+        // cg3 não é alterado — fica estático
+
+        requestAnimationFrame(tick);
+      }
+
+      requestAnimationFrame(tick);
     })();
 
   </script>
