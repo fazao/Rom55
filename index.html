@@ -2447,6 +2447,129 @@
       .sec-maq__title { font-size: clamp(28px, 9vw, 44px); }
     }
 
+    /* ═══════════════════════════════════════════
+       BANNER DE COOKIES — LGPD
+    ═══════════════════════════════════════════ */
+    .cookie-banner {
+      position: fixed;
+      bottom: 48px;
+      left: 50%;
+      transform: translateX(-50%) translateY(120px);
+      z-index: 9999;
+      width: min(720px, calc(100vw - 32px));
+      background: rgba(13,18,48,.95);
+      border: 1px solid var(--border-2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 8px 40px rgba(0,0,0,.5), 0 0 0 1px rgba(79,142,247,.1);
+      opacity: 0;
+      transition: transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s var(--ease);
+    }
+    /* linha de acento no topo */
+    .cookie-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4F8EF7, #60A5FA, #93C5FD);
+      border-radius: 12px 12px 0 0;
+    }
+    .cookie-banner.is-visible {
+      transform: translateX(-50%) translateY(0) !important;
+      opacity: 1 !important;
+    }
+    .cookie-banner.is-hiding {
+      transform: translateX(-50%) translateY(120px) !important;
+      opacity: 0 !important;
+    }
+    .cookie-banner__icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+    .cookie-banner__text {
+      flex: 1;
+    }
+    .cookie-banner__title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--fg-primary);
+      margin-bottom: 4px;
+    }
+    .cookie-banner__desc {
+      font-size: 12px;
+      line-height: 1.55;
+      color: var(--fg-muted);
+    }
+    .cookie-banner__desc a {
+      color: var(--blue-logo);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .cookie-banner__desc a:hover { color: #93C5FD; }
+    .cookie-banner__actions {
+      display: flex;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .cookie-btn-accept {
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #0F52BA, #4F8EF7);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+      white-space: nowrap;
+    }
+    .cookie-btn-accept:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(79,142,247,.4);
+    }
+    .cookie-btn-decline {
+      padding: 10px 16px;
+      background: transparent;
+      color: var(--fg-muted);
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      border: 1px solid var(--border-2);
+      border-radius: 6px;
+      cursor: pointer;
+      transition: color .2s var(--ease), border-color .2s var(--ease);
+      white-space: nowrap;
+    }
+    .cookie-btn-decline:hover {
+      color: var(--fg-primary);
+      border-color: rgba(184,192,204,.4);
+    }
+
+    @media (max-width: 640px) {
+      .cookie-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        bottom: 16px;
+        padding: 18px 18px 20px;
+      }
+      .cookie-banner__actions { width: 100%; }
+      .cookie-btn-accept, .cookie-btn-decline { flex: 1; text-align: center; }
+    }
+
   </style>
 </head>
 
@@ -3955,5 +4078,55 @@
     })();
 
   </script>
+
+  <!-- BANNER DE COOKIES — LGPD -->
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Aviso de cookies">
+    <div class="cookie-banner__icon">🍪</div>
+    <div class="cookie-banner__text">
+      <div class="cookie-banner__title">Sua privacidade importa</div>
+      <p class="cookie-banner__desc">
+        Utilizamos cookies para melhorar sua experiência, analisar o tráfego do site e
+        personalizar conteúdo. Ao clicar em <strong style="color:var(--fg-secondary)">"Aceitar"</strong>,
+        você concorda com nossa <a href="#" onclick="return false">Política de Privacidade</a>.
+      </p>
+    </div>
+    <div class="cookie-banner__actions">
+      <button class="cookie-btn-decline" id="cookie-decline">Recusar</button>
+      <button class="cookie-btn-accept"  id="cookie-accept">Aceitar cookies</button>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var KEY = 'rom55_cookie_consent';
+      // fallback para file:// onde localStorage pode ser bloqueado
+      var store = null;
+      try { store = window.localStorage; } catch(e) {}
+      if (store && store.getItem(KEY)) return;
+
+      var banner = document.getElementById('cookie-banner');
+      if (!banner) return;
+
+      setTimeout(function() {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateX(-50%) translateY(120px)';
+        banner.style.transition = 'transform .5s cubic-bezier(.34,1.56,.64,1), opacity .4s ease';
+        // força reflow
+        banner.offsetHeight;
+        banner.style.opacity = '1';
+        banner.style.transform = 'translateX(-50%) translateY(0)';
+      }, 3500);
+
+      function dismiss(accepted) {
+        try { if (store) store.setItem(KEY, accepted ? 'accepted' : 'declined'); } catch(e) {}
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateX(-50%) translateY(120px)';
+        setTimeout(function() { if (banner.parentNode) banner.parentNode.removeChild(banner); }, 500);
+      }
+      document.getElementById('cookie-accept').onclick  = function() { dismiss(true);  };
+      document.getElementById('cookie-decline').onclick = function() { dismiss(false); };
+    })();
+  </script>
+
 </body>
 </html>
