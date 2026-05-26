@@ -1,0 +1,14 @@
+{
+  "name": "rom55-site",
+  "version": "1.0.0",
+  "description": "Site institucional estático da Agência Rom55",
+  "private": true,
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "lint": "echo 'No linter configured'"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.0"
+  },
+  "devDependencies": {}
+}
