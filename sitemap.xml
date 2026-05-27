@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ── Página principal ── -->
+  <url>
+    <loc>https://rom55.com.br/</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://rom55.com.br/"/>
+    <image:image>
+      <image:loc>https://rom55.com.br/ROM55-LOGO.webp</image:loc>
+      <image:title>Rom55 Growth Marketing — Aceleração para Empresas</image:title>
+      <image:caption>Logo da Rom55, agência de Growth Marketing especializada em IA e aceleração de negócios</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ── Seções internas (âncoras) ── -->
+  <url>
+    <loc>https://rom55.com.br/#jornada</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://rom55.com.br/#ecossistema</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rom55.com.br/#mercado</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://rom55.com.br/#comparacao</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://rom55.com.br/#contato</loc>
+    <lastmod>2026-05-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+</urlset>
