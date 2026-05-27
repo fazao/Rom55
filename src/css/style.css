@@ -1,0 +1,249 @@
+/* ============================================================
+   Variáveis
+   ============================================================ */
+:root {
+  --color-primary:    #e63329;
+  --color-dark:       #111111;
+  --color-light:      #f5f5f5;
+  --color-white:      #ffffff;
+  --color-gray:       #666666;
+  --color-border:     #e0e0e0;
+
+  --font-sans: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  --spacing-xs:  0.5rem;
+  --spacing-sm:  1rem;
+  --spacing-md:  2rem;
+  --spacing-lg:  4rem;
+  --spacing-xl:  6rem;
+
+  --radius: 8px;
+  --transition: 0.25s ease;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+body {
+  font-family: var(--font-sans);
+  color: var(--color-dark);
+  background-color: var(--color-white);
+  line-height: 1.6;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin-inline: auto;
+  padding-inline: var(--spacing-md);
+}
+
+/* ============================================================
+   Header
+   ============================================================ */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: var(--spacing-sm);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  letter-spacing: -0.5px;
+}
+
+.nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.nav a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-dark);
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--color-primary);
+}
+
+/* ============================================================
+   Hero
+   ============================================================ */
+.hero {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  padding-block: var(--spacing-xl);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--spacing-sm);
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #cccccc;
+  max-width: 520px;
+  margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================
+   Botão
+   ============================================================ */
+.btn {
+  display: inline-block;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 0.75rem 1.75rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: opacity var(--transition);
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+/* ============================================================
+   Seções
+   ============================================================ */
+.section {
+  padding-block: var(--spacing-lg);
+}
+
+.section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-md);
+}
+
+.section-intro {
+  max-width: 620px;
+  color: var(--color-gray);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ============================================================
+   Cards
+   ============================================================ */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--spacing-md);
+}
+
+.card {
+  background-color: var(--color-light);
+  border-radius: var(--radius);
+  padding: var(--spacing-md);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-primary);
+}
+
+.card p {
+  color: var(--color-gray);
+  font-size: 0.95rem;
+}
+
+/* ============================================================
+   Footer
+   ============================================================ */
+.footer {
+  background-color: var(--color-dark);
+  color: #aaaaaa;
+  padding-block: var(--spacing-md);
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+/* ============================================================
+   Página interna: hero simples
+   ============================================================ */
+.page-hero {
+  background-color: var(--color-light);
+  padding-block: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-hero h1 {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 800;
+}
+
+.page-hero p {
+  color: var(--color-gray);
+  margin-top: var(--spacing-xs);
+  max-width: 540px;
+}
+
+/* ============================================================
+   Formulário de contato
+   ============================================================ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  max-width: 600px;
+}
+
+.form label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+  display: block;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  transition: border-color var(--transition);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ============================================================
+   Responsivo
+   ============================================================ */
+@media (max-width: 640px) {
+  .nav {
+    gap: var(--spacing-sm);
+  }
+
+  .hero {
+    padding-block: var(--spacing-lg);
+  }
+}
