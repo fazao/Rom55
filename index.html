@@ -4087,7 +4087,7 @@
             ctx.beginPath();ctx.roundRect(x,y,bW,bH,2);ctx.fillStyle=gr;ctx.fill();
           });
         };
-        var series=[new LineSeries('#4F8EF7','#8BBBFF',.45,5000,400),new LineSeries('#2ECC40','#00E87A',.38,6500,1200)];
+        var series=[new LineSeries('#4F8EF7','#8BBBFF',.62,5000,400),new LineSeries('#2ECC40','#00E87A',.55,6500,1200)];
         var bars=new BarChart();
         var startTime=null;
         function loop(now) {
@@ -4096,17 +4096,24 @@
           ctx.clearRect(0,0,W,H);
           bars.update(elapsed);bars.draw(ctx,W,H,prog*.5);
           series.forEach(function(s){s.update(elapsed);s.draw(ctx,W,H);});
+          /* Título ROI MÉDIO no topo centralizado */
+          ctx.fillStyle='#4F8EF7';
+          ctx.font='bold '+(W*.028)+'px DM Mono,monospace';
+          ctx.textAlign='center';
+          ctx.shadowColor='rgba(79,142,247,.6)'; ctx.shadowBlur=10;
+          ctx.fillText('ROI MÉDIO',W*.5,H*.1);
+          ctx.shadowBlur=0; ctx.textAlign='left';
+
           if(elapsed>2500){
             var alpha=clamp((elapsed-2500)/500,0,1);
-            var fy=H*.12+Math.sin(elapsed/1200)*(H*.015);
+            var fy=H*.15+Math.sin(elapsed/1200)*(H*.015);
             ctx.save();ctx.globalAlpha=alpha;
-            var cw=W*.38,ch=H*.12,cx=W*.55,cy=fy;
+            var cw=W*.22,ch=H*.14,cx=W*.62,cy=fy;
             ctx.fillStyle='rgba(13,18,48,.92)';ctx.strokeStyle='#243070';ctx.lineWidth=1;
             ctx.beginPath();ctx.roundRect(cx,cy,cw,ch,4);ctx.fill();ctx.stroke();
             var gr2=ctx.createLinearGradient(cx,cy,cx+cw,cy);gr2.addColorStop(0,'#4F8EF7');gr2.addColorStop(1,'#93C5FD');
             ctx.fillStyle=gr2;ctx.beginPath();ctx.roundRect(cx,cy,cw,2,2);ctx.fill();
-            ctx.fillStyle='rgba(138,153,196,.8)';ctx.font=(W*.025)+'px DM Mono,monospace';ctx.fillText('ROI MÉDIO',cx+cw*.12,cy+ch*.45);
-            ctx.fillStyle='#00E87A';ctx.font='bold '+(W*.09)+'px Barlow Condensed,sans-serif';ctx.fillText('+347%',cx+cw*.1,cy+ch*.85);
+            ctx.fillStyle='#00E87A';ctx.font='bold '+(W*.075)+'px Barlow Condensed,sans-serif';ctx.textAlign='center';ctx.fillText('+67%',cx+cw*.5,cy+ch*.82);ctx.textAlign='left';
             ctx.restore();
           }
           requestAnimationFrame(loop);
