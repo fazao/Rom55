@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Sobre Nós | Rom55 Growth Marketing — Nossa História</title>
+  <meta name="description" content="Conheça a Rom55. Nascemos da necessidade real de resolver o crescimento dos nossos clientes com um acompanhamento 360° de todo o fluxo de vendas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rom55.com.br/sobre" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://rom55.com.br/sobre" />
+  <meta property="og:title"       content="Sobre Nós | Rom55 Growth Marketing" />
+  <meta property="og:description" content="A Rom55 nasceu para fazer um acompanhamento 360° de todo o fluxo de vendas, identificando cada ponto cego e propondo a melhor solução." />
+  <meta property="og:site_name"   content="Rom55 Growth Marketing" />
+  <meta property="og:locale"      content="pt_BR" />
+  <meta name="theme-color" content="#070C1A" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#070C1A;color:#F0F4FF;font-family:"Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+    .navbar{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid #e8ecf4;box-shadow:0 2px 20px rgba(26,36,96,.10)}
+    .navbar__logo img{height:44px;width:auto;display:block}
+  </style>
+
+  <style>
+    /* ═══ TOKENS ═══ */
+    :root {
+      --bg-base:    #070C1A;
+      --bg-elev-1:  #0D1230;
+      --bg-elev-2:  #111840;
+      --border-1:   #1C2550;
+      --border-2:   #243070;
+      --fg-primary:   #F0F4FF;
+      --fg-secondary: #C8D4F0;
+      --fg-muted:     #8A99C4;
+      --fg-muted-2:   #5A6A9A;
+      --blue-logo:  #4F8EF7;
+      --font-display: "Barlow Condensed", "Impact", sans-serif;
+      --font-body:    "Barlow", system-ui, sans-serif;
+      --font-mono:    "DM Mono", ui-monospace, monospace;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ═══ ATMOSFERA ═══ */
+    body::before {
+      content: "";
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(79,142,247,.10) 1px, transparent 1px),
+        linear-gradient(rgba(79,142,247,.07) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: .45;
+      mask-image: radial-gradient(ellipse 75% 75% at 55% 35%, #000 25%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at 55% 35%, #000 25%, transparent 80%);
+      pointer-events: none; z-index: 0;
+    }
+    .atm-shimmer {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent 0%, #4F8EF7 25%, #60A5FA 60%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer-move 3s linear infinite;
+      z-index: 101; pointer-events: none;
+    }
+    @keyframes shimmer-move { 0%{background-position:-200% 0;opacity:.6} 50%{opacity:1} 100%{background-position:200% 0;opacity:.6} }
+    .atm-vglow {
+      position: fixed; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 1px; pointer-events: none; z-index: -1;
+      background: linear-gradient(rgba(0,0,0,0), rgba(79,142,247,.15) 40%, rgba(37,99,235,.10) 65%, rgba(0,0,0,0));
+    }
+
+    /* ═══ NAVBAR ═══ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px; background: #fff;
+      border-bottom: 1px solid #e8ecf4;
+      box-shadow: 0 2px 20px rgba(26,36,96,.10);
+    }
+    .navbar::after {
+      content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4F8EF7 0%, #60A5FA 100%);
+    }
+    .navbar__logo { display: flex; align-items: center; text-decoration: none; }
+    .navbar__logo img { height: 44px; width: auto; display: block; }
+    .navbar__menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .navbar__menu a {
+      display: flex; align-items: center; gap: 6px; padding: 8px 16px;
+      font-family: var(--font-body); font-size: 13px; font-weight: 500;
+      letter-spacing: .4px; color: #3a4a6b; text-decoration: none;
+      position: relative; transition: color .15s var(--ease);
+    }
+    .navbar__menu a::after {
+      content: ""; position: absolute; bottom: 4px; left: 16px; right: 16px; height: 1px;
+      background: var(--blue-logo); transform: scaleX(0); transform-origin: center;
+      transition: transform .35s var(--ease);
+    }
+    .navbar__menu a:hover, .navbar__menu a.is-active { color: #1a2460; }
+    .navbar__menu a:hover::after, .navbar__menu a.is-active::after { transform: scaleX(1); }
+    .navbar__menu a.is-active { font-weight: 600; }
+    .navbar__cta {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
+      background: linear-gradient(135deg, #0F52BA, #4F8EF7);
+      color: #fff !important; font-weight: 700 !important;
+      font-size: 11px !important; letter-spacing: .8px !important;
+      text-transform: uppercase; border-radius: 4px;
+      position: relative; overflow: hidden; isolation: isolate;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease) !important;
+    }
+    .navbar__cta:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 24px rgba(15,82,186,.4) !important; }
+    .navbar__cta::after { display: none !important; }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px; padding: 8px;
+      background: none; border: 1px solid #c8d0e8; border-radius: 4px; cursor: pointer;
+    }
+    .nav-toggle span { display: block; width: 20px; height: 1.5px; background: #1a2460; }
+
+    /* ═══ HERO ═══ */
+    .sobre-hero {
+      position: relative; z-index: 1;
+      padding: 140px 80px 100px;
+      overflow: hidden; min-height: 80vh;
+      display: flex; align-items: center;
+    }
+    .sobre-hero__glow {
+      position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+      width: 1200px; height: 800px;
+      background: radial-gradient(ellipse at 50% 30%,
+        rgba(79,142,247,.12) 0%, rgba(79,142,247,.04) 50%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .sobre-hero__lines {
+      position: absolute; inset: 0; pointer-events: none; z-index: 0;
+      display: flex; justify-content: center; gap: 200px; overflow: hidden;
+    }
+    .sobre-hero__line {
+      width: 1px; height: 100%;
+      background: linear-gradient(rgba(0,0,0,0) 0%, rgba(79,142,247,.12) 30%,
+        rgba(79,142,247,.2) 50%, rgba(79,142,247,.12) 70%, rgba(0,0,0,0) 100%);
+    }
+    .sobre-hero__inner {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 100px; align-items: center;
+    }
+
+    /* Coluna esquerda */
+    .sobre-hero__copy { }
+    .sobre-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 28px;
+      opacity: 0; animation: fade-up .7s var(--ease) .2s forwards;
+    }
+    .sobre-eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--blue-logo); }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--blue-logo);
+      box-shadow: 0 0 8px rgba(79,142,247,.6); animation: dot-pulse 2s ease-in-out infinite; }
+    @keyframes dot-pulse { 0%,100%{box-shadow:0 0 0 0 rgba(79,142,247,.4)} 50%{box-shadow:0 0 0 6px transparent} }
+
+    .sobre-title {
+      font-family: var(--font-display); font-size: clamp(52px,5.5vw,82px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -2px; line-height: .92;
+      margin-bottom: 32px;
+      opacity: 0; animation: fade-up .8s var(--ease) .35s forwards;
+    }
+    .sobre-title .l1 { display: block; color: var(--fg-primary); }
+    .sobre-title .l2 {
+      display: block;
+      background: linear-gradient(90deg, #1A6FE8, #4F8EF7, #93C5FD);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .sobre-title .l3 { display: block; color: var(--fg-primary); }
+
+    .sobre-lead {
+      font-size: 18px; line-height: 1.75; color: var(--fg-secondary);
+      margin-bottom: 40px; max-width: 500px;
+      opacity: 0; animation: fade-up .8s var(--ease) .5s forwards;
+    }
+    .sobre-lead strong { color: var(--fg-primary); font-weight: 600; }
+
+    /* Coluna direita — card visual */
+    .sobre-hero__visual {
+      opacity: 0; animation: fade-scale .9s var(--ease) .6s forwards;
+    }
+    .sobre-card-origin {
+      background: var(--bg-elev-1); border: 1px solid var(--border-1);
+      border-radius: 16px; padding: 36px;
+      position: relative; overflow: hidden;
+    }
+    .sobre-card-origin::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4F8EF7, #60A5FA, #93C5FD);
+    }
+    .origin-year {
+      font-family: var(--font-display); font-size: 96px; font-weight: 900;
+      line-height: 1; letter-spacing: -4px;
+      background: linear-gradient(135deg, rgba(79,142,247,.15), rgba(79,142,247,.04));
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: -8px; display: block;
+    }
+    .origin-label {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 24px;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .origin-label::before { content: ""; width: 20px; height: 1px; background: var(--blue-logo); }
+    .origin-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1px; background: var(--border-1); border: 1px solid var(--border-1);
+      border-radius: 10px; overflow: hidden; margin-top: 28px;
+    }
+    .ostat {
+      background: var(--bg-elev-2); padding: 20px 20px;
+      text-align: center;
+    }
+    .ostat__num {
+      font-family: var(--font-display); font-size: 36px; font-weight: 800;
+      line-height: 1; letter-spacing: -1px; margin-bottom: 6px;
+      background: linear-gradient(135deg, #4F8EF7, #93C5FD);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .ostat__label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--fg-muted-2); line-height: 1.4;
+    }
+
+    /* ═══ SEÇÃO HISTÓRIA ═══ */
+    .sobre-historia {
+      position: relative; z-index: 1;
+      padding: 100px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+    .sobre-historia::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,.4), transparent);
+    }
+    .historia__inner {
+      max-width: 1100px; margin: 0 auto;
+    }
+    .historia__head {
+      text-align: center; margin-bottom: 80px;
+    }
+    .historia__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 20px;
+    }
+    .historia__eyebrow::before, .historia__eyebrow::after {
+      content: ""; width: 28px; height: 1px; background: var(--blue-logo); opacity: .5;
+    }
+    .historia__title {
+      font-family: var(--font-display); font-size: clamp(32px,4vw,56px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -1px;
+      color: var(--fg-primary); line-height: 1;
+    }
+    .historia__title span { color: var(--blue-logo); }
+
+    /* Timeline de parágrafos */
+    .historia__timeline {
+      display: flex; flex-direction: column; gap: 0;
+      position: relative;
+    }
+    /* Linha vertical central */
+    .historia__timeline::before {
+      content: ""; position: absolute;
+      left: 50%; transform: translateX(-50%);
+      top: 0; bottom: 0; width: 1px;
+      background: linear-gradient(to bottom, transparent, var(--border-2) 10%, var(--border-2) 90%, transparent);
+    }
+
+    .hblock {
+      display: grid; grid-template-columns: 1fr 60px 1fr;
+      align-items: start; gap: 0;
+      padding: 40px 0;
+    }
+    .hblock:nth-child(odd)  { }
+    .hblock:nth-child(even) { }
+
+    /* Conteúdo esquerdo */
+    .hblock__left {
+      padding-right: 48px; text-align: right;
+    }
+    /* Conteúdo direito */
+    .hblock__right {
+      padding-left: 48px; text-align: left;
+    }
+    /* Células vazias */
+    .hblock:nth-child(odd)  .hblock__right { opacity: 0; pointer-events: none; }
+    .hblock:nth-child(even) .hblock__left  { opacity: 0; pointer-events: none; }
+
+    /* Nó central */
+    .hblock__node {
+      display: flex; align-items: flex-start; justify-content: center;
+      padding-top: 6px; position: relative; z-index: 1;
+    }
+    .hblock__dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--bg-base); border: 2px solid var(--blue-logo);
+      box-shadow: 0 0 0 4px rgba(79,142,247,.15), 0 0 16px rgba(79,142,247,.3);
+      flex-shrink: 0;
+    }
+
+    /* Card de conteúdo do bloco */
+    .hcard {
+      background: var(--bg-elev-1); border: 1px solid var(--border-1);
+      border-radius: 12px; padding: 28px 32px;
+      position: relative; overflow: hidden;
+      transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+    }
+    .hcard:hover {
+      border-color: rgba(79,142,247,.3);
+      box-shadow: 0 8px 32px rgba(7,12,26,.5);
+      transform: translateY(-3px);
+    }
+    .hcard::before {
+      content: ""; position: absolute; top: 0; left: 0; bottom: 0; width: 3px;
+      background: linear-gradient(to bottom, var(--blue-logo), #60A5FA);
+      border-radius: 2px 0 0 2px; opacity: 0;
+      transition: opacity .3s var(--ease);
+    }
+    .hcard:hover::before { opacity: 1; }
+    /* Card nos blocos pares — barra à direita */
+    .hblock:nth-child(even) .hcard::before {
+      left: auto; right: 0;
+      border-radius: 0 2px 2px 0;
+    }
+    .hcard__icon {
+      font-size: 28px; margin-bottom: 12px; display: block;
+    }
+    .hcard__title {
+      font-family: var(--font-display); font-size: 18px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--fg-primary); margin-bottom: 12px;
+    }
+    .hcard__text {
+      font-size: 15px; line-height: 1.75; color: var(--fg-muted);
+    }
+    .hcard__text strong { color: var(--fg-secondary); font-weight: 600; }
+
+    /* ═══ SEÇÃO MISSÃO / VALORES ═══ */
+    .sobre-valores {
+      position: relative; z-index: 1;
+      padding: 100px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden;
+    }
+    .sobre-valores::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,.4), transparent);
+    }
+    /* Glow fundo */
+    .sobre-valores::after {
+      content: ""; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+      width: 80%; height: 60%;
+      background: radial-gradient(ellipse at 50% 0%, rgba(79,142,247,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .valores__head {
+      text-align: center; margin-bottom: 64px; position: relative; z-index: 1;
+    }
+    .valores__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 20px;
+    }
+    .valores__eyebrow::before, .valores__eyebrow::after {
+      content: ""; width: 28px; height: 1px; background: var(--blue-logo); opacity: .5;
+    }
+    .valores__title {
+      font-family: var(--font-display); font-size: clamp(30px,4vw,52px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -1px;
+      color: var(--fg-primary); line-height: 1;
+    }
+    .valores__title span { color: var(--blue-logo); }
+
+    .valores__grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 20px; position: relative; z-index: 1;
+    }
+    .vcard {
+      background: var(--bg-elev-1); border: 1px solid var(--border-1);
+      border-radius: 14px; padding: 36px 28px;
+      position: relative; overflow: hidden;
+      transition: border-color .35s var(--ease), transform .35s var(--ease), box-shadow .35s var(--ease);
+    }
+    .vcard::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--blue-logo), #93C5FD);
+      opacity: 0; transition: opacity .35s var(--ease);
+    }
+    .vcard:hover { border-color: rgba(79,142,247,.3); transform: translateY(-5px); box-shadow: 0 16px 48px rgba(7,12,26,.5); }
+    .vcard:hover::before { opacity: 1; }
+    .vcard__shine {
+      position: absolute; inset: 0; border-radius: 14px;
+      transform: translateX(-120%) skewX(-15deg);
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,.09), transparent);
+      transition: transform .55s var(--ease); pointer-events: none; z-index: 1;
+    }
+    .vcard:hover .vcard__shine { transform: translateX(120%) skewX(-15deg); }
+    .vcard__icon {
+      width: 52px; height: 52px; border-radius: 12px;
+      background: rgba(79,142,247,.08); border: 1px solid rgba(79,142,247,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; margin-bottom: 20px; position: relative; z-index: 2;
+      transition: box-shadow .35s var(--ease);
+    }
+    .vcard:hover .vcard__icon { box-shadow: 0 0 20px rgba(79,142,247,.25); }
+    .vcard__title {
+      font-family: var(--font-display); font-size: 20px; font-weight: 800;
+      text-transform: uppercase; letter-spacing: .5px;
+      color: var(--fg-primary); margin-bottom: 12px; position: relative; z-index: 2;
+    }
+    .vcard__text {
+      font-size: 15px; line-height: 1.7; color: var(--fg-muted);
+      position: relative; z-index: 2;
+    }
+
+    /* ═══ CTA FINAL ═══ */
+    .sobre-cta {
+      position: relative; z-index: 1;
+      padding: 100px 80px;
+      border-top: 1px solid var(--border-1);
+      overflow: hidden; text-align: center;
+    }
+    .sobre-cta::before {
+      content: ""; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(79,142,247,.4), transparent);
+    }
+    .sobre-cta__glow {
+      position: absolute; top: -10%; left: 50%; transform: translateX(-50%);
+      width: 700px; height: 500px;
+      background: radial-gradient(ellipse at 50% 30%, rgba(79,142,247,.1) 0%, transparent 70%);
+      pointer-events: none; z-index: 0;
+    }
+    .sobre-cta__inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .sobre-cta__eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 24px;
+    }
+    .sobre-cta__eyebrow::before, .sobre-cta__eyebrow::after {
+      content: ""; width: 28px; height: 1px; background: var(--blue-logo); opacity: .5;
+    }
+    .sobre-cta__title {
+      font-family: var(--font-display); font-size: clamp(36px,5vw,68px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -2px; line-height: .95;
+      margin-bottom: 24px; color: var(--fg-primary);
+    }
+    .sobre-cta__title span {
+      background: linear-gradient(90deg, #1A6FE8, #4F8EF7, #93C5FD);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .sobre-cta__sub {
+      font-size: 16px; line-height: 1.75; color: var(--fg-muted);
+      margin-bottom: 48px;
+    }
+    .sobre-cta__btn {
+      display: inline-flex; align-items: center; gap: 12px;
+      padding: 16px 40px; border-radius: 6px; text-decoration: none;
+      font-family: var(--font-body); font-size: 13px; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase; color: #fff;
+      background: linear-gradient(135deg, #0F52BA, #4F8EF7);
+      position: relative; overflow: hidden; isolation: isolate;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+      animation: glow-pulse 3s ease-in-out infinite;
+    }
+    @keyframes glow-pulse { 0%,100%{box-shadow:0 0 0 1px rgba(79,142,247,.3),0 0 16px rgba(79,142,247,.15)} 50%{box-shadow:0 0 0 1px rgba(79,142,247,.6),0 0 32px rgba(79,142,247,.35)} }
+    .sobre-cta__btn::before { content: "■"; font-size: 7px; opacity: .7; }
+    .sobre-cta__btn::after {
+      content: ""; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.18), transparent);
+      transform: skewX(-20deg); transition: left .5s var(--ease); z-index: 1;
+    }
+    .sobre-cta__btn:hover { transform: translateY(-3px); }
+    .sobre-cta__btn:hover::after { left: 140%; }
+    .sobre-cta__btn span { position: relative; z-index: 2; }
+    .sobre-cta__btn .arrow { transition: transform .3s var(--ease); position: relative; z-index: 2; }
+    .sobre-cta__btn:hover .arrow { transform: translateX(5px); }
+
+    /* ═══ FOOTER ═══ */
+    .contact-footer {
+      position: relative; z-index: 1; padding: 32px 80px;
+      background: #ffffff; border-top: 3px solid #4F8EF7;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px; box-shadow: 0 -2px 20px rgba(26,36,96,.08);
+    }
+    .footer-brand { display: flex; align-items: center; gap: 16px; }
+    .footer-brand img { height: 36px; width: auto; }
+    .footer-brand span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #3a4a6b; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a { font-size: 13px; font-weight: 500; color: #3a4a6b; text-decoration: none; transition: color .2s var(--ease); }
+    .footer-links a:hover { color: #1a2460; }
+    .footer-copy { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; color: #3a4a6b; }
+
+    /* ═══ WhatsApp Float ═══ */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9998;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45); text-decoration: none;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+      animation: wa-pulse 3s ease-in-out infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.12); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)} 50%{box-shadow:0 4px 28px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.12)} }
+
+    /* ═══ KEYFRAMES ═══ */
+    @keyframes fade-up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fade-scale { from{opacity:0;transform:scale(.95)} to{opacity:1;transform:scale(1)} }
+
+    /* ═══ FADE-IN SECTIONS ═══ */
+    .sobre-historia, .sobre-valores, .sobre-cta {
+      opacity: 0; transform: translateY(60px);
+      transition: opacity .9s cubic-bezier(.4,0,.2,1), transform .9s cubic-bezier(.4,0,.2,1);
+    }
+    .sobre-historia.in-view, .sobre-valores.in-view, .sobre-cta.in-view {
+      opacity: 1; transform: translateY(0);
+    }
+
+    /* ═══ RESPONSIVO ═══ */
+    @media (max-width: 860px) {
+      .navbar { padding: 0 16px; }
+      .nav-toggle { display: flex; }
+      .navbar__menu {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; background: #fff;
+        border-bottom: 1px solid #e8ecf4; padding: 8px 0;
+      }
+      .navbar__menu.is-open { display: flex; }
+      .navbar__menu a { padding: 14px 24px; }
+      .sobre-hero { padding: 110px 20px 60px; min-height: auto; }
+      .sobre-hero__inner { grid-template-columns: 1fr; gap: 40px; }
+      .sobre-hero__lines { display: none; }
+      .sobre-historia { padding: 60px 20px; }
+      .historia__timeline::before { left: 20px; }
+      .hblock { grid-template-columns: 40px 1fr; }
+      .hblock__left { display: none; }
+      .hblock:nth-child(even) .hblock__left { display: none; }
+      .hblock:nth-child(even) .hblock__right { opacity: 1; pointer-events: auto; }
+      .hblock:nth-child(odd)  .hblock__right { opacity: 1; pointer-events: auto; }
+      .hblock__right { padding-left: 24px; }
+      .sobre-valores { padding: 60px 20px; }
+      .valores__grid { grid-template-columns: 1fr; gap: 16px; }
+      .sobre-cta { padding: 60px 20px; }
+      .contact-footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+    }
+    @media (max-width: 560px) {
+      .sobre-hero { padding: 100px 14px 48px; }
+      .sobre-title { font-size: clamp(40px,12vw,60px); }
+      .sobre-lead { font-size: 15px; }
+      .origin-year { font-size: 64px; }
+      .hcard { padding: 22px 20px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="atm-shimmer" aria-hidden="true"></div>
+  <div class="atm-vglow"   aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="/" class="navbar__logo">
+      <img src="ROM55-LOGO.webp" fetchpriority="high" decoding="async" width="180" height="44" alt="Rom55 Growth Marketing" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__menu" id="navMenu" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="/sobre.html" class="is-active">Sobre Nós</a></li>
+      <li><a href="/contato.html">Contato</a></li>
+      <li><a href="#">Blog</a></li>
+      <li>
+        <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
+           target="_blank" class="navbar__cta">
+          <span>↑</span><span>Acelerar agora</span>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="sobre-hero">
+      <div class="sobre-hero__glow"  aria-hidden="true"></div>
+      <div class="sobre-hero__lines" aria-hidden="true">
+        <div class="sobre-hero__line"></div>
+        <div class="sobre-hero__line"></div>
+        <div class="sobre-hero__line"></div>
+      </div>
+
+      <div class="sobre-hero__inner">
+
+        <div class="sobre-hero__copy">
+          <div class="sobre-eyebrow">
+            <span class="eyebrow-dot"></span>
+            Nossa história
+          </div>
+          <h1 class="sobre-title">
+            <span class="l1">Quem</span>
+            <span class="l2">somos</span>
+            <span class="l3">nós?</span>
+          </h1>
+          <p class="sobre-lead">
+            Nascemos da necessidade de ir <strong>além do tráfego pago</strong> — porque crescimento real exige um ecossistema completo, e não apenas uma peça isolada funcionando bem.
+          </p>
+        </div>
+
+        <div class="sobre-hero__visual">
+          <div class="sobre-card-origin">
+            <span class="origin-year">ROM55</span>
+            <div class="origin-label">Fundada para crescer junto</div>
+            <p style="font-size:14px;line-height:1.7;color:var(--fg-muted);margin-bottom:0">
+              Uma agência que nasceu da experiência real de campo — vendo de perto o que trava o crescimento das empresas e fazendo algo a respeito.
+            </p>
+            <div class="origin-stats">
+              <div class="ostat">
+                <div class="ostat__num">360°</div>
+                <div class="ostat__label">Visão do fluxo<br>de vendas</div>
+              </div>
+              <div class="ostat">
+                <div class="ostat__num">60+</div>
+                <div class="ostat__label">Empresas<br>aceleradas</div>
+              </div>
+              <div class="ostat">
+                <div class="ostat__num">+67%</div>
+                <div class="ostat__label">ROI médio<br>dos clientes</div>
+              </div>
+              <div class="ostat">
+                <div class="ostat__num">7</div>
+                <div class="ostat__label">Etapas da<br>jornada mapeadas</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HISTÓRIA — TIMELINE -->
+    <section class="sobre-historia">
+      <div class="historia__inner">
+
+        <div class="historia__head">
+          <div class="historia__eyebrow">A origem da Rom55</div>
+          <h2 class="historia__title">Como tudo <span>começou</span></h2>
+        </div>
+
+        <div class="historia__timeline">
+
+          <!-- Bloco 1 — O problema do tráfego isolado -->
+          <div class="hblock">
+            <div class="hblock__left">
+              <div class="hcard">
+                <span class="hcard__icon">📣</span>
+                <div class="hcard__title">O limite do tráfego pago</div>
+                <p class="hcard__text">
+                  A Rom55 surgiu de uma necessidade maior: atender nossos clientes de verdade. Percebia que somente com tráfego pago não conseguia resolver o problema de crescimento — por mais que entregávamos uma gestão com excelência, <strong>se a recepção e o fechamento dos leads não estava bom, não adiantava de nada ter um tráfego bom.</strong>
+                </p>
+              </div>
+            </div>
+            <div class="hblock__node"><div class="hblock__dot"></div></div>
+            <div class="hblock__right"></div>
+          </div>
+
+          <!-- Bloco 2 — A descoberta dos pontos cegos -->
+          <div class="hblock">
+            <div class="hblock__left"></div>
+            <div class="hblock__node"><div class="hblock__dot"></div></div>
+            <div class="hblock__right">
+              <div class="hcard">
+                <span class="hcard__icon">🔍</span>
+                <div class="hcard__title">Os pontos cegos de cada negócio</div>
+                <p class="hcard__text">
+                  A mesma coisa acontecia quando encontrávamos clientes sem um bom website, sem um CRM para gerenciar leads, sem dashboards e ferramentas para monitorar o negócio. Durante a consultoria, <strong>poucas e simples perguntas que eu fazia ao gestor — ele não sabia me responder.</strong>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bloco 3 — O que não se mede não se gerencia -->
+          <div class="hblock">
+            <div class="hblock__left">
+              <div class="hcard">
+                <span class="hcard__icon">📊</span>
+                <div class="hcard__title">O que não se mede, não se gerencia</div>
+                <p class="hcard__text">
+                  Isso começou a nos preocupar e nos levou a tomar uma atitude. <strong>Aquilo que não se mede, não se gerencia</strong> — ou seja, eles não tinham o controle do próprio negócio nas mãos. E foi então que a Rom55 nasceu para mudar isso.
+                </p>
+              </div>
+            </div>
+            <div class="hblock__node"><div class="hblock__dot"></div></div>
+            <div class="hblock__right"></div>
+          </div>
+
+          <!-- Bloco 4 — Nascimento da Rom55 -->
+          <div class="hblock">
+            <div class="hblock__left"></div>
+            <div class="hblock__node"><div class="hblock__dot"></div></div>
+            <div class="hblock__right">
+              <div class="hcard">
+                <span class="hcard__icon">🚀</span>
+                <div class="hcard__title">O nascimento da Rom55</div>
+                <p class="hcard__text">
+                  A Rom55 nasceu para fazer um <strong>acompanhamento 360° de todo o fluxo de vendas</strong> dos nossos clientes — identificando cada ponto cego e propondo a melhor solução para resolver aquele problema. Não somos apenas uma agência de tráfego: somos parceiros de crescimento.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VALORES -->
+    <section class="sobre-valores">
+      <div class="valores__head">
+        <div class="valores__eyebrow">O que nos move</div>
+        <h2 class="valores__title">Nossos <span>pilares</span></h2>
+      </div>
+
+      <div class="valores__grid">
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">🎯</div>
+          <div class="vcard__title">Resultado real</div>
+          <p class="vcard__text">Não entregamos relatórios bonitos. Entregamos crescimento mensurável — com métricas claras desde o primeiro dia e acompanhamento próximo em cada etapa.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">🔗</div>
+          <div class="vcard__title">Visão do todo</div>
+          <p class="vcard__text">Analisamos toda a jornada de compra — do primeiro clique à indicação. Porque o problema raramente está em um único ponto, e a solução exige enxergar o sistema completo.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">🤖</div>
+          <div class="vcard__title">IA na operação</div>
+          <p class="vcard__text">Usamos Inteligência Artificial para automatizar processos, reduzir tarefas operacionais e escalar com eficiência — permitindo que nossos clientes cresçam sem precisar aumentar o time.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">📐</div>
+          <div class="vcard__title">Método e estrutura</div>
+          <p class="vcard__text">Cada cliente recebe um ecossistema de vendas estruturado do zero — CRM, dashboard, website, tráfego, atendimento e time comercial trabalhando em harmonia.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">🤝</div>
+          <div class="vcard__title">Parceria genuína</div>
+          <p class="vcard__text">Tratamos o negócio do cliente como se fosse nosso. Não terceirizamos responsabilidade — assumimos o desafio junto e acompanhamos cada etapa da evolução.</p>
+        </div>
+
+        <div class="vcard">
+          <div class="vcard__shine"></div>
+          <div class="vcard__icon">📈</div>
+          <div class="vcard__title">Escala sustentável</div>
+          <p class="vcard__text">Nosso objetivo não é um pico de resultado — é construir uma base sólida que permita ao negócio se manter crescendo de forma consistente por muito tempo.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="sobre-cta">
+      <div class="sobre-cta__glow" aria-hidden="true"></div>
+      <div class="sobre-cta__inner">
+        <div class="sobre-cta__eyebrow">Próximo passo</div>
+        <h2 class="sobre-cta__title">
+          Pronto para <span>crescer com a gente?</span>
+        </h2>
+        <p class="sobre-cta__sub">
+          Fale com um especialista e descubra como a Rom55 pode estruturar o ecossistema de vendas ideal para o seu negócio.
+        </p>
+        <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
+           target="_blank" class="sobre-cta__btn">
+          <span>Quero falar com um especialista</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="contact-footer">
+    <div class="footer-brand">
+      <img src="ROM55-LOGO.webp" alt="Rom55" />
+      <span>© 2026 Rom55 Growth Marketing</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+    </ul>
+    <span class="footer-copy">contato@rom55.com.br</span>
+  </footer>
+
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
+     target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    /* Mobile nav */
+    const toggle = document.getElementById('navToggle');
+    const menu   = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a:not(.navbar__cta)').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('#')) e.preventDefault();
+        menu.querySelectorAll('a').forEach(x => x.classList.remove('is-active'));
+        a.classList.add('is-active');
+        if (window.innerWidth <= 860) menu.classList.remove('is-open');
+      });
+    });
+
+    /* Fade-in sections */
+    const sections = document.querySelectorAll('.sobre-historia, .sobre-valores, .sobre-cta');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); obs.unobserve(e.target); }
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -60px 0px' });
+    sections.forEach(s => obs.observe(s));
+
+    /* Scroll light line */
+    (function() {
+      const line = document.querySelector('.atm-vglow');
+      if (!line) return;
+      function update() {
+        const scrollY = window.scrollY;
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docH > 0 ? Math.min(scrollY / docH, 1) : 0;
+        const center = 10 + progress * 80, spread = 18;
+        const top = Math.max(0, center - spread), bot = Math.min(100, center + spread);
+        line.style.background = 'linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,0) ' + top + '%,rgba(139,187,255,.55) ' + (center - spread * .4) + '%,rgba(79,142,247,.90) ' + center + '%,rgba(139,187,255,.55) ' + (center + spread * .4) + '%,rgba(0,0,0,0) ' + bot + '%,rgba(0,0,0,0) 100%)';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+  </script>
+
+</body>
+</html>
