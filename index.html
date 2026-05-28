@@ -1149,15 +1149,14 @@
 
     /* TICKER DS1 */
     .hero__ticker {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
+      position: relative;
       height: 34px;
       overflow: hidden;
       border-top: 1px solid var(--border-1);
       background: rgba(7,12,26,.85);
       display: flex;
       align-items: center;
-      z-index: 50;
+      z-index: 1;
       mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent);
     }
     .ticker-track {
@@ -2956,6 +2955,37 @@
       .cmp-card--neg, .cmp-card--pos { box-shadow: none; }
     }
 
+/* ═══ FOOTER ═══ */
+    .contact-footer {
+      position: relative; z-index: 1;
+      padding: 32px 80px;
+      background: #ffffff;
+      border-top: 3px solid #4F8EF7;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px;
+      box-shadow: 0 -2px 20px rgba(26,36,96,.08);
+    }
+    .footer-brand {
+      display: flex; align-items: center; gap: 16px;
+    }
+    .footer-brand img { height: 36px; width: auto; filter: none; opacity: 1; }
+    .footer-brand span {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: #3a4a6b;
+    }
+    .footer-links {
+      display: flex; gap: 28px; list-style: none;
+    }
+    .footer-links a {
+      font-size: 13px; color: #5a6a9a; text-decoration: none;
+      transition: color .2s var(--ease);
+    }
+    .footer-links a:hover { color: #1a2460; }
+    .footer-copy {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
+      color: #3a4a6b;
+    }
+
     /* ── WhatsApp Flutuante ── */
     .whatsapp-float {
       position: fixed;
@@ -3010,7 +3040,7 @@
       <li><a href="#" class="is-active">Home</a></li>
       <li><a href="#">Serviços</a></li>
       <li><a href="#">Sobre Nós</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a href="contato.html">Contato</a></li>
       <li><a href="#">Blog</a></li>
       <li><a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..." target="_blank" class="navbar__cta"><span class="btn-icon">↑</span><span class="btn-text">Acelerar agora</span></a></li>
     </ul>
@@ -3079,26 +3109,15 @@
 
   </section>
 
-  <!-- TICKER DS1 -->
-  <div class="hero__ticker" aria-hidden="true">
-    <div class="ticker-track">
-      <span>Tráfego Pago<span class="t-val">↑ +127%</span></span><span class="t-div">·</span>
-      <span>Conversão<span class="t-val">3.8×</span></span><span class="t-div">·</span>
-      <span>CAC Reduzido<span class="t-val">-42%</span></span><span class="t-div">·</span>
-      <span>LTV Médio<span class="t-val">R$ 18.400</span></span><span class="t-div">·</span>
-      <span>Leads Gerados<span class="t-val">84.000+</span></span><span class="t-div">·</span>
-      <span>ROI Campanhas<span class="t-val">+67%</span></span><span class="t-div">·</span>
-      <span>Clientes Ativos<span class="t-val">60+</span></span><span class="t-div">·</span>
-      <!-- duplicata para loop contínuo -->
-      <span>Tráfego Pago<span class="t-val">↑ +127%</span></span><span class="t-div">·</span>
-      <span>Conversão<span class="t-val">3.8×</span></span><span class="t-div">·</span>
-      <span>CAC Reduzido<span class="t-val">-42%</span></span><span class="t-div">·</span>
-      <span>LTV Médio<span class="t-val">R$ 18.400</span></span><span class="t-div">·</span>
-      <span>Leads Gerados<span class="t-val">84.000+</span></span><span class="t-div">·</span>
-      <span>ROI Campanhas<span class="t-val">+67%</span></span><span class="t-div">·</span>
-      <span>Clientes Ativos<span class="t-val">60+</span></span><span class="t-div">·</span>
-    </div>
-  </div>
+  <!-- Atmosfera DS1 -->
+  <div id="atm-light" aria-hidden="true"></div>
+  <div class="atm-vglow"   aria-hidden="true"></div>
+  <div class="atm-shimmer" aria-hidden="true"></div>
+  <div class="atm-horizon" aria-hidden="true"></div>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+
+
 
   <!-- ═══════════ SEXTA DOBRA — JORNADA DE COMPRA ═══════════ -->
   <section class="sec6" id="jornada" aria-label="Jornada de Compra — 7 etapas do cliente">
@@ -3378,6 +3397,27 @@
     </div>
 
   </section>
+
+  <!-- TICKER DS1 -->
+  <div class="hero__ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>Tráfego Pago<span class="t-val">↑ +127%</span></span><span class="t-div">·</span>
+      <span>Conversão<span class="t-val">3.8×</span></span><span class="t-div">·</span>
+      <span>CAC Reduzido<span class="t-val">-42%</span></span><span class="t-div">·</span>
+      <span>LTV Médio<span class="t-val">R$ 18.400</span></span><span class="t-div">·</span>
+      <span>Leads Gerados<span class="t-val">84.000+</span></span><span class="t-div">·</span>
+      <span>ROI Campanhas<span class="t-val">+67%</span></span><span class="t-div">·</span>
+      <span>Clientes Ativos<span class="t-val">60+</span></span><span class="t-div">·</span>
+      <!-- duplicata para loop contínuo -->
+      <span>Tráfego Pago<span class="t-val">↑ +127%</span></span><span class="t-div">·</span>
+      <span>Conversão<span class="t-val">3.8×</span></span><span class="t-div">·</span>
+      <span>CAC Reduzido<span class="t-val">-42%</span></span><span class="t-div">·</span>
+      <span>LTV Médio<span class="t-val">R$ 18.400</span></span><span class="t-div">·</span>
+      <span>Leads Gerados<span class="t-val">84.000+</span></span><span class="t-div">·</span>
+      <span>ROI Campanhas<span class="t-val">+67%</span></span><span class="t-div">·</span>
+      <span>Clientes Ativos<span class="t-val">60+</span></span><span class="t-div">·</span>
+    </div>
+  </div>
 
   <!-- ═══════════ NOVA TERCEIRA DOBRA — A MÁQUINA COMPLETA ═══════════ -->
   <section class="sec-maq" id="ecossistema" aria-label="Ecossistema de vendas — engrenagens alinhadas">
@@ -4139,6 +4179,22 @@
   </script>
 
   </main><!-- /main -->
+
+
+
+  <!-- FOOTER -->
+  <footer class="contact-footer">
+    <div class="footer-brand">
+      <img src="ROM55-LOGO.webp" alt="Rom55" />
+      <span>© 2026 Rom55 Growth Marketing</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Política de Privacidade</a></li>
+    </ul>
+    <span class="footer-copy">contato@rom55.com.br</span>
+  </footer>
 
   <!-- WhatsApp Flutuante -->
   <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
