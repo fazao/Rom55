@@ -3942,7 +3942,11 @@
     });
     menu.querySelectorAll('a:not(.navbar__cta)').forEach(a => {
       a.addEventListener('click', e => {
-        e.preventDefault();
+        const href = a.getAttribute('href');
+        /* Só bloquear navegação para links âncora (#) */
+        if (!href || href === '#' || href.startsWith('#')) {
+          e.preventDefault();
+        }
         menu.querySelectorAll('a').forEach(x => x.classList.remove('is-active'));
         a.classList.add('is-active');
         if (window.innerWidth <= 860) menu.classList.remove('is-open');
