@@ -2947,7 +2947,6 @@
       /* Desativar canvas e animações pesadas */
       #chart-canvas, .hero__visual { display: none !important; }
       /* Simplificar keyframes custosos */
-      .gear-cw, .gear-ccw, .gear-slow { animation: none !important; }
       .flow-line { animation: none !important; }
       /* Reduzir will-change */
       .sec2, .sec3, .sec4, .sec5, .sec6, .sec-maq { will-change: auto; }
@@ -4115,8 +4114,10 @@
         requestAnimationFrame(loop);
       })();
 
-      /* Engrenagens */
-      (function() {
+    } /* /desktop only */
+
+    /* Engrenagens — roda em todos os dispositivos */
+    (function() {
         var angle=0;
         function sg(id,cx,cy,deg) { var el=document.getElementById(id);if(el)el.setAttribute('transform','translate('+cx+','+cy+') rotate('+deg+')'); }
         function tick() {
@@ -4126,9 +4127,7 @@
           requestAnimationFrame(tick);
         }
         requestAnimationFrame(tick);
-      })();
-
-    } /* /desktop only */
+    })();
 
   </script>
 
