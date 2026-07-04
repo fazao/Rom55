@@ -2979,8 +2979,8 @@
       display: flex; gap: 28px; list-style: none;
     }
     .footer-links a {
-      font-size: 13px; color: #5a6a9a; text-decoration: none;
-      transition: color .2s var(--ease);
+      font-size: 13px; font-weight: 500; color: #3a4a6b; text-decoration: none;
+      transition: color .2s var(--ease); cursor: pointer;
     }
     .footer-links a:hover { color: #1a2460; }
     .footer-copy {
@@ -4204,6 +4204,14 @@
     </ul>
     <span class="footer-copy">contato@rom55.com.br</span>
   </footer>
+  <script id="footer-nav-script">
+    document.querySelectorAll('.footer-links a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('#')) e.preventDefault();
+      });
+    });
+  </script>
 
   <!-- WhatsApp Flutuante -->
   <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
