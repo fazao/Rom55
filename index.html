@@ -2817,9 +2817,9 @@
     ═══════════════════════════════════════════ */
     .cookie-banner {
       position: fixed;
-      bottom: 48px;
+      top: 80px;
       left: 50%;
-      transform: translateX(-50%) translateY(120px);
+      transform: translateX(-50%) translateY(-120px);
       z-index: 9999;
       width: min(720px, calc(100vw - 32px));
       background: rgba(13,18,48,.95);
@@ -2849,7 +2849,7 @@
       opacity: 1 !important;
     }
     .cookie-banner.is-hiding {
-      transform: translateX(-50%) translateY(120px) !important;
+      transform: translateX(-50%) translateY(-120px) !important;
       opacity: 0 !important;
     }
     .cookie-banner__icon {
