@@ -2375,8 +2375,11 @@
     .sec6__scroll {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 8px;
+      padding-bottom: 12px;
+      cursor: grab;
+      scroll-snap-type: x mandatory;
     }
+    .sec6__scroll:active { cursor: grabbing; }
     .sec6__scroll::-webkit-scrollbar { height: 4px; }
     .sec6__scroll::-webkit-scrollbar-track { background: var(--border-1); }
     .sec6__scroll::-webkit-scrollbar-thumb { background: var(--blue-logo); border-radius: 2px; }
@@ -2995,6 +2998,25 @@
       color: #3a4a6b;
     }
 
+
+    /* Hint de swipe na jornada — mobile */
+    @media (max-width: 860px) {
+      .sec6__scroll-wrap { position: relative; }
+      .sec6__swipe-hint {
+        display: flex; align-items: center; justify-content: center; gap: 8px;
+        margin-top: 12px; margin-bottom: 4px;
+        font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px;
+        text-transform: uppercase; color: var(--fg-muted-2);
+        opacity: 1; transition: opacity .5s;
+        animation: hint-fade 3s ease-in-out 1s forwards;
+      }
+      .sec6__swipe-hint.hidden { opacity: 0; pointer-events: none; }
+      @keyframes hint-fade { 0%{opacity:1} 70%{opacity:1} 100%{opacity:0} }
+      .swipe-arrow { animation: swipe-bounce .9s ease-in-out infinite; display: inline-block; }
+      @keyframes swipe-bounce { 0%,100%{transform:translateX(0)} 50%{transform:translateX(6px)} }
+    }
+    @media (min-width: 861px) { .sec6__swipe-hint { display: none; } }
+
     /* ── WhatsApp Flutuante ── */
     .whatsapp-float {
       position: fixed;
@@ -3027,6 +3049,10 @@
     /* ── CORREÇÕES MOBILE GLOBAIS ── */
     @media (max-width: 860px) {
       html, body { overflow-x: hidden; max-width: 100vw; }
+      .sec6__scroll { overflow-x: auto !important; max-width: 100%; }
+      .sec6 { overflow: visible !important; }
+      /* Indicador visual de scroll na jornada */
+      .sec6__scroll::after { content: ""; display: block; }
       .contact-footer {
         display: grid;
         grid-template-columns: 1fr;
@@ -3102,7 +3128,7 @@
           <span class="btn-icon">↑</span>
           <span class="btn-text">Quero crescer agora</span>
         </a>
-        <a href="#" class="btn-secondary">
+        <a href="/servicos" class="btn-secondary">
           <span class="btn-text">Ver nossos serviços</span>
           <span class="btn-arrow">→</span>
         </a>
@@ -3154,7 +3180,7 @@
       <p class="sec6__sub">Este é um grande diferencial nosso: percebemos, por experiência própria, que o problema de uma empresa não crescer raramente está em um único ponto — por isso é essencial analisar o todo e acompanhar de perto cada uma dessas etapas, pois acreditamos que essa é a melhor forma no mercado hoje para um negócio se manter sólido por muito tempo e conseguir escalar.</p>
     </div>
 
-    <div class="sec6__scroll">
+    <div class="sec6__scroll" id="jornada-scroll">
     <table class="jornada">
 
       <!-- ══ HEADER DE ESTÁGIOS ══ -->
@@ -3420,6 +3446,7 @@
       </tbody>
     </table>
     </div>
+    <p class="sec6__swipe-hint" id="jornada-hint"><span class="swipe-arrow">←</span> arraste para ver mais <span class="swipe-arrow">→</span></p>
 
   </section>
 
