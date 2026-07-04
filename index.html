@@ -341,7 +341,7 @@
     *,*::before,*::after{box-sizing:border-box}
     body{margin:0;background:#070C1A;color:#F0F4FF;font-family:"Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
     .navbar{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid #e8ecf4;box-shadow:0 2px 20px rgba(26,36,96,.10)}
-    .navbar__logo img{height:64px;width:auto;display:block}
+    .navbar__logo img{height:56px;width:auto;display:block}
     .hero{min-height:100vh;position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:120px 80px 80px;padding-right:calc(min(460px,38vw) + 8%)}
     .hero__content{max-width:580px;width:100%;position:relative;z-index:2}
     .hero__h1{font-family:"Barlow Condensed",system-ui,sans-serif;font-size:clamp(52px,6.5vw,94px);font-weight:900;line-height:.95;letter-spacing:-1.5px;text-transform:uppercase;margin-bottom:6px;color:#F0F4FF}
@@ -352,7 +352,7 @@
     @media(min-width:861px){.hero__visual{display:flex;grid-column:2;align-items:center;justify-content:center;width:100%;height:100%;pointer-events:none;z-index:1;opacity:0;animation:fade-scale .9s cubic-bezier(.4,0,.2,1) .85s forwards}}
     @media(max-width:860px){
       .navbar{padding:0 16px}
-      .navbar__logo img{height:52px}
+      .navbar__logo img{height:46px}
       .hero{grid-template-columns:1fr;padding:100px 16px 80px}
       .hero__h1{font-size:clamp(34px,11vw,50px)}
     }
@@ -611,9 +611,9 @@
       text-decoration: none;
     }
     .navbar__logo img {
-      height: 64px;
+      height: 56px;
       width: auto;
-      max-width: 240px;
+      max-width: 210px;
       display: block;
       object-fit: contain;
       object-position: center top;
@@ -1247,7 +1247,7 @@
     /* ── Mobile padrão (≤ 560px) ── */
     @media (max-width: 560px) {
       .navbar { padding: 0 16px; height: 64px; }
-      .navbar__logo img { height: 52px; }
+      .navbar__logo img { height: 46px; }
 
       .hero { padding: 78px 12px 88px; }
       .hero__desc    { max-width: 100%; }
@@ -2970,7 +2970,7 @@
     .footer-brand {
       display: flex; align-items: center; gap: 16px;
     }
-    .footer-brand img { height: 64px; width: auto; filter: none; opacity: 1; }
+    .footer-brand img { height: 56px; width: auto; filter: none; opacity: 1; }
     .footer-brand span {
       font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px;
       text-transform: uppercase; color: #3a4a6b;
