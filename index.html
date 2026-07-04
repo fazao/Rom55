@@ -2321,6 +2321,7 @@
     .sec6 {
       position: relative;
       z-index: 1;
+      overflow: hidden;
       padding: 120px 40px 100px;
       border-top: 1px solid var(--border-1);
       overflow: hidden;
@@ -2944,7 +2945,7 @@
 
 
     /* content-visibility: acelera render inicial ignorando conteúdo fora da tela */
-    .sec2, .sec3, .sec4, .sec5, .sec6, .sec-maq {
+    .sec2, .sec3, .sec4, .sec5, .sec-maq {
       content-visibility: auto;
       contain-intrinsic-size: 0 600px;
     }
@@ -3053,14 +3054,17 @@
     @media (max-width: 860px) {
       html { overflow-x: hidden; }
       body { overflow-x: clip; }
-      .sec6 { overflow: visible !important; max-width: 100%; }
+      .sec6 { overflow: hidden !important; max-width: 100vw; }
       .sec6__scroll {
-        overflow-x: scroll !important;
+        overflow-x: auto !important;
         -webkit-overflow-scrolling: touch !important;
-        max-width: 100% !important;
-        touch-action: pan-x pan-y !important;
+        width: 100%;
+        max-width: 100vw;
+        touch-action: pan-x;
         display: block;
+        white-space: nowrap;
       }
+      .jornada { min-width: 900px; }
       /* Indicador visual de scroll na jornada */
       .sec6__scroll::after { content: ""; display: block; }
       .contact-footer {
