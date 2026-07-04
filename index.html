@@ -2981,7 +2981,14 @@
     .footer-links a {
       font-size: 13px; font-weight: 500; color: #3a4a6b; text-decoration: none;
       transition: color .2s var(--ease); cursor: pointer;
+      position: relative;
     }
+    .footer-links a::after {
+      content: ""; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+      background: #4F8EF7; transform: scaleX(0); transform-origin: center;
+      transition: transform .35s cubic-bezier(.4,0,.2,1);
+    }
+    .footer-links a:hover::after { transform: scaleX(1); }
     .footer-links a:hover { color: #1a2460; }
     .footer-copy {
       font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
