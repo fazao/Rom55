@@ -431,7 +431,7 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow-x: clip;
       position: relative;
     }
 
@@ -1198,7 +1198,7 @@
     /* ── Touch / mobile global ── */
     @media (max-width: 860px) {
       html { -webkit-text-size-adjust: 100%; }
-      body { overflow-x: hidden; }
+      body { overflow-x: clip; }
     }
 
     /* ── Tablet largo ── */
@@ -2377,7 +2377,10 @@
       -webkit-overflow-scrolling: touch;
       padding-bottom: 12px;
       cursor: grab;
-      scroll-snap-type: x mandatory;
+      touch-action: pan-x;
+      scroll-snap-type: none;
+      position: relative;
+      z-index: 1;
     }
     .sec6__scroll:active { cursor: grabbing; }
     .sec6__scroll::-webkit-scrollbar { height: 4px; }
@@ -3048,9 +3051,16 @@
 
     /* ── CORREÇÕES MOBILE GLOBAIS ── */
     @media (max-width: 860px) {
-      html, body { overflow-x: hidden; max-width: 100vw; }
-      .sec6__scroll { overflow-x: auto !important; max-width: 100%; }
-      .sec6 { overflow: visible !important; }
+      html { overflow-x: hidden; }
+      body { overflow-x: clip; }
+      .sec6 { overflow: visible !important; max-width: 100%; }
+      .sec6__scroll {
+        overflow-x: scroll !important;
+        -webkit-overflow-scrolling: touch !important;
+        max-width: 100% !important;
+        touch-action: pan-x pan-y !important;
+        display: block;
+      }
       /* Indicador visual de scroll na jornada */
       .sec6__scroll::after { content: ""; display: block; }
       .contact-footer {
