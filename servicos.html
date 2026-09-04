@@ -256,6 +256,9 @@
     .srv-card--crm::before      { background: linear-gradient(90deg, #67E8F9, #A5F3FC); }
     .srv-card--crm:hover        { border-color: rgba(103,232,249,.3); box-shadow: 0 16px 48px rgba(103,232,249,.08); }
 
+    .srv-card--website::before  { background: linear-gradient(90deg, #F97316, #FDBA74); }
+    .srv-card--website:hover    { border-color: rgba(249,115,22,.3); box-shadow: 0 16px 48px rgba(249,115,22,.08); }
+
     /* Shine no hover */
     .srv-card .srv-shine {
       position: absolute; inset: 0; border-radius: 16px;
@@ -267,6 +270,7 @@
     .srv-card--ia      .srv-shine { background: linear-gradient(90deg, transparent, rgba(167,139,250,.08), transparent); }
     .srv-card--suporte .srv-shine { background: linear-gradient(90deg, transparent, rgba(252,211,77,.06), transparent); }
     .srv-card--crm     .srv-shine { background: linear-gradient(90deg, transparent, rgba(103,232,249,.07), transparent); }
+    .srv-card--website .srv-shine { background: linear-gradient(90deg, transparent, rgba(249,115,22,.07), transparent); }
     .srv-card:hover .srv-shine { transform: translateX(120%) skewX(-15deg); }
 
     /* Conteúdo do card */
@@ -285,6 +289,7 @@
     .srv-card--ia       .srv-card__icon-wrap { background: rgba(167,139,250,.08);border: 1px solid rgba(167,139,250,.2); box-shadow: 0 0 20px rgba(167,139,250,.08); }
     .srv-card--suporte  .srv-card__icon-wrap { background: rgba(252,211,77,.08); border: 1px solid rgba(252,211,77,.2);  box-shadow: 0 0 20px rgba(252,211,77,.07); }
     .srv-card--crm      .srv-card__icon-wrap { background: rgba(103,232,249,.07);border: 1px solid rgba(103,232,249,.2); box-shadow: 0 0 20px rgba(103,232,249,.07); }
+    .srv-card--website  .srv-card__icon-wrap { background: rgba(249,115,22,.08); border: 1px solid rgba(249,115,22,.2);  box-shadow: 0 0 20px rgba(249,115,22,.07); }
     .srv-card:hover .srv-card--trafego  .srv-card__icon-wrap { box-shadow: 0 0 32px rgba(79,142,247,.25); }
 
     .srv-card__meta { flex: 1; }
@@ -297,6 +302,7 @@
     .srv-card--ia      .srv-card__tag  { color: #A78BFA; }
     .srv-card--suporte .srv-card__tag  { color: #FCD34D; }
     .srv-card--crm     .srv-card__tag  { color: #67E8F9; }
+    .srv-card--website .srv-card__tag  { color: #F97316; }
 
     .srv-card__title {
       font-family: var(--font-display); font-size: clamp(22px,2.5vw,30px);
@@ -334,6 +340,7 @@
     .srv-card--ia      .srv-feat-icon  { background: rgba(167,139,250,.10);color: #A78BFA; }
     .srv-card--suporte .srv-feat-icon  { background: rgba(252,211,77,.10); color: #FCD34D; }
     .srv-card--crm     .srv-feat-icon  { background: rgba(103,232,249,.10);color: #67E8F9; }
+    .srv-card--website .srv-feat-icon  { background: rgba(249,115,22,.10); color: #F97316; }
 
     /* CTA dentro do card */
     .srv-card__cta {
@@ -362,6 +369,9 @@
     .srv-card--ia      .srv-card__cta { background: linear-gradient(135deg, #6D28D9, #A78BFA); box-shadow: 0 4px 16px rgba(167,139,250,.2); animation: glow-purple 3s ease-in-out infinite; }
     .srv-card--suporte .srv-card__cta { background: linear-gradient(135deg, #B45309, #FCD34D); color: #1a1200; box-shadow: 0 4px 16px rgba(252,211,77,.15); }
     .srv-card--crm     .srv-card__cta { background: linear-gradient(135deg, #0E7490, #67E8F9); color: #001a1f; box-shadow: 0 4px 16px rgba(103,232,249,.15); }
+    .srv-card--website .srv-card__cta { background: linear-gradient(135deg, #C2410C, #F97316); box-shadow: 0 4px 16px rgba(249,115,22,.2); animation: glow-orange 3s ease-in-out infinite; }
+
+    @keyframes glow-orange { 0%,100%{box-shadow:0 4px 16px rgba(249,115,22,.2)} 50%{box-shadow:0 4px 24px rgba(249,115,22,.45)} }
 
     @keyframes glow-blue   { 0%,100%{box-shadow:0 4px 16px rgba(79,142,247,.2)} 50%{box-shadow:0 4px 24px rgba(79,142,247,.45)} }
     @keyframes glow-purple { 0%,100%{box-shadow:0 4px 16px rgba(167,139,250,.2)} 50%{box-shadow:0 4px 24px rgba(167,139,250,.45)} }
@@ -647,6 +657,7 @@
         <span class="srv-pill srv-pill--green"><span class="srv-pill__dot"></span>SEO</span>
         <span class="srv-pill srv-pill--purple"><span class="srv-pill__dot"></span>Agentes de IA</span>
         <span class="srv-pill srv-pill--cyan"><span class="srv-pill__dot"></span>Sistemas com IA</span>
+        <span class="srv-pill srv-pill--amber"><span class="srv-pill__dot"></span>Website</span>
       </div>
     </section>
 
@@ -747,6 +758,36 @@
         </div>
 
 
+
+        <!-- 4. Website -->
+        <div class="srv-card srv-card--website">
+          <div class="srv-shine"></div>
+          <div class="srv-card__header">
+            <div class="srv-card__icon-wrap">🌐</div>
+            <div class="srv-card__meta">
+              <span class="srv-card__tag">Presença Digital</span>
+              <div class="srv-card__title">Website</div>
+              <div class="srv-card__sub">Landing Page · Site Institucional</div>
+            </div>
+          </div>
+          <p class="srv-card__desc">
+            Desenvolvemos sites <strong>rápidos, responsivos e otimizados para converter</strong> — projetados para trabalhar junto com o tráfego pago e o SEO, maximizando cada visita que chega até você.
+          </p>
+          <ul class="srv-card__features">
+            <li><span class="srv-feat-icon">✓</span>Melhor desempenho no tráfego pago</li>
+            <li><span class="srv-feat-icon">✓</span>Site rápido e responsivo em qualquer dispositivo</li>
+            <li><span class="srv-feat-icon">✓</span>Melhor experiência para o usuário (UX otimizado)</li>
+            <li><span class="srv-feat-icon">✓</span>Presença digital 24 horas por dia, 7 dias por semana</li>
+            <li><span class="srv-feat-icon">✓</span>Estrutura técnica preparada para SEO desde o início</li>
+            <li><span class="srv-feat-icon">✓</span>Carregamento ultrarrápido e Core Web Vitals no verde</li>
+            <li><span class="srv-feat-icon">✓</span>Integração com ferramentas de análise e rastreamento</li>
+          </ul>
+          <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20tenho%20interesse%20no%20desenvolvimento%20de%20website%20da%20Rom55"
+             target="_blank" class="srv-card__cta">
+            <span>Quero saber mais</span>
+            <span class="arr">→</span>
+          </a>
+        </div>
 
         <!-- 5. Sistemas com IA / CRM (card largo) -->
         <div class="srv-card srv-card--crm srv-card--wide">
