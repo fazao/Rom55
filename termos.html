@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Política de Privacidade | Rom55 Growth Marketing</title>
+  <meta name="description" content="Saiba como a Rom55 coleta, utiliza, armazena e protege seus dados pessoais, em conformidade com a LGPD." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://rom55.com.br/termos" />
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://rom55.com.br/termos" />
+  <meta property="og:title"       content="Política de Privacidade | Rom55 Growth Marketing" />
+  <meta property="og:description" content="Como a Rom55 trata seus dados pessoais — coleta, uso, armazenamento e seus direitos pela LGPD." />
+  <meta property="og:site_name"   content="Rom55 Growth Marketing" />
+  <meta property="og:locale"      content="pt_BR" />
+  <meta name="theme-color" content="#070C1A" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400&display=swap"
+        rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@400;500;600&family=DM+Mono:wght@400&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{background:#070C1A;color:#F0F4FF;font-family:"Barlow",system-ui,sans-serif;-webkit-font-smoothing:antialiased;min-height:100vh;overflow-x:hidden}
+    .navbar{position:fixed;top:0;left:0;right:0;height:72px;background:#fff;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 48px;border-bottom:1px solid #e8ecf4;box-shadow:0 2px 20px rgba(26,36,96,.10)}
+    .navbar__logo img{height:56px;width:auto;display:block}
+  </style>
+
+  <style>
+    /* ═══ TOKENS ═══ */
+    :root {
+      --bg-base:    #070C1A;
+      --bg-elev-1:  #0D1230;
+      --bg-elev-2:  #111840;
+      --border-1:   #1C2550;
+      --border-2:   #243070;
+      --fg-primary:   #F0F4FF;
+      --fg-secondary: #C8D4F0;
+      --fg-muted:     #8A99C4;
+      --fg-muted-2:   #5A6A9A;
+      --blue-logo:  #4F8EF7;
+      --font-display: "Barlow Condensed", "Impact", sans-serif;
+      --font-body:    "Barlow", system-ui, sans-serif;
+      --font-mono:    "DM Mono", ui-monospace, monospace;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    /* ═══ ATMOSFERA ═══ */
+    body::before {
+      content: ""; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(to right, rgba(79,142,247,.10) 1px, transparent 1px),
+        linear-gradient(rgba(79,142,247,.07) 1px, transparent 1px);
+      background-size: 80px 80px; opacity: .45;
+      mask-image: radial-gradient(ellipse 75% 75% at 55% 35%, #000 25%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse 75% 75% at 55% 35%, #000 25%, transparent 80%);
+      pointer-events: none; z-index: 0;
+    }
+    .atm-shimmer {
+      position: fixed; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, #4F8EF7 25%, #60A5FA 60%, transparent);
+      background-size: 200% 100%; animation: shimmer-move 3s linear infinite;
+      z-index: 101; pointer-events: none;
+    }
+    @keyframes shimmer-move { 0%{background-position:-200% 0;opacity:.6} 50%{opacity:1} 100%{background-position:200% 0;opacity:.6} }
+    .atm-vglow {
+      position: fixed; top: 0; bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 1px; pointer-events: none; z-index: -1;
+      background: linear-gradient(rgba(0,0,0,0), rgba(79,142,247,.15) 40%, rgba(37,99,235,.10) 65%, rgba(0,0,0,0));
+    }
+
+    /* ═══ NAVBAR ═══ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 48px; height: 72px; background: #fff;
+      border-bottom: 1px solid #e8ecf4;
+      box-shadow: 0 2px 20px rgba(26,36,96,.10);
+    }
+    .navbar::after {
+      content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, #4F8EF7, #60A5FA);
+    }
+    .navbar__logo { display: flex; align-items: center; text-decoration: none; }
+    .navbar__logo img { height: 56px; width: auto; display: block; }
+    .navbar__menu { display: flex; align-items: center; gap: 4px; list-style: none; }
+    .navbar__menu a {
+      display: flex; align-items: center; gap: 6px; padding: 13px 16px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 500;
+      letter-spacing: .4px; color: #3a4a6b; text-decoration: none;
+      position: relative; transition: color .15s var(--ease); line-height: 1.2;
+    }
+    .navbar__menu a::after {
+      content: ""; position: absolute; bottom: 4px; left: 16px; right: 16px; height: 1px;
+      background: var(--blue-logo); transform: scaleX(0); transform-origin: center;
+      transition: transform .35s var(--ease);
+    }
+    .navbar__menu a:hover, .navbar__menu a.is-active { color: #1a2460; }
+    .navbar__menu a:hover::after, .navbar__menu a.is-active::after { transform: scaleX(1); }
+    .navbar__menu a.is-active { font-weight: 600; }
+    .navbar__cta {
+      display: inline-flex; align-items: center; gap: 8px; padding: 9px 20px;
+      background: linear-gradient(135deg, #0F52BA, #4F8EF7);
+      color: #fff !important; font-weight: 700 !important;
+      font-size: 15px !important; letter-spacing: .8px !important;
+      text-transform: uppercase; border-radius: 4px;
+      position: relative; overflow: hidden; isolation: isolate;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease) !important;
+    }
+    .navbar__cta:hover { transform: translateY(-2px) !important; box-shadow: 0 8px 24px rgba(15,82,186,.4) !important; }
+    .navbar__cta::after { display: none !important; }
+    .nav-toggle {
+      display: none; flex-direction: column; gap: 5px; padding: 8px;
+      background: none; border: 1px solid #c8d0e8; border-radius: 4px; cursor: pointer;
+    }
+    .nav-toggle span { display: block; width: 20px; height: 1.5px; background: #1a2460; }
+
+    /* ═══ HERO ═══ */
+    .pp-hero {
+      position: relative; z-index: 1;
+      padding: 140px 80px 64px;
+      text-align: center;
+    }
+    .pp-hero__eyebrow {
+      display: inline-flex; align-items: center; gap: 12px;
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 24px;
+    }
+    .pp-hero__eyebrow::before, .pp-hero__eyebrow::after {
+      content: ""; width: 32px; height: 1px; background: var(--blue-logo); opacity: .6;
+    }
+    .pp-hero__title {
+      font-family: var(--font-display); font-size: clamp(42px,6vw,80px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -2px; line-height: .92;
+      margin-bottom: 20px;
+    }
+    .pp-hero__title .l1 { display: block; color: var(--fg-primary); }
+    .pp-hero__title .l2 {
+      display: block;
+      background: linear-gradient(90deg, #1A6FE8, #4F8EF7, #93C5FD);
+      -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .pp-hero__date {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: 1.5px;
+      color: var(--fg-muted-2); margin-top: 16px;
+    }
+
+    /* ═══ LAYOUT PRINCIPAL ═══ */
+    .pp-layout {
+      position: relative; z-index: 1;
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      gap: 48px;
+      max-width: 1100px; margin: 0 auto;
+      padding: 0 80px 100px;
+      align-items: start;
+    }
+
+    /* ─── ÍNDICE LATERAL ─── */
+    .pp-toc {
+      position: sticky; top: 96px;
+      background: var(--bg-elev-1); border: 1px solid var(--border-1);
+      border-radius: 14px; padding: 28px 24px;
+    }
+    .pp-toc__label {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 16px;
+      display: block;
+    }
+    .pp-toc__list { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .pp-toc__list a {
+      display: block; padding: 6px 10px; border-radius: 6px;
+      font-size: 13px; color: var(--fg-muted); text-decoration: none; line-height: 1.4;
+      transition: background .15s var(--ease), color .15s var(--ease);
+      border-left: 2px solid transparent;
+    }
+    .pp-toc__list a:hover {
+      background: rgba(79,142,247,.08); color: var(--fg-secondary);
+      border-left-color: var(--blue-logo);
+    }
+
+    /* ─── CONTEÚDO ─── */
+    .pp-content { min-width: 0; }
+
+    /* Intro */
+    .pp-intro {
+      font-size: 18px; line-height: 1.8; color: var(--fg-muted);
+      margin-bottom: 56px; padding-bottom: 40px;
+      border-bottom: 1px solid var(--border-1);
+    }
+    .pp-intro a { color: var(--blue-logo); text-decoration: none; }
+    .pp-intro a:hover { text-decoration: underline; }
+
+    /* Seções */
+    .pp-section { margin-bottom: 56px; scroll-margin-top: 96px; }
+    .pp-section:not(:last-child) {
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border-1);
+    }
+    .pp-section__num {
+      font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 8px; display: block;
+    }
+    .pp-section__title {
+      font-family: var(--font-display); font-size: clamp(22px,2.5vw,30px);
+      font-weight: 900; text-transform: uppercase; letter-spacing: -.5px;
+      color: var(--fg-primary); line-height: 1; margin-bottom: 20px;
+    }
+    .pp-section p {
+      font-size: 16px; line-height: 1.8; color: var(--fg-muted); margin-bottom: 16px;
+    }
+    .pp-section p:last-child { margin-bottom: 0; }
+    .pp-section strong { color: var(--fg-secondary); font-weight: 600; }
+    .pp-section a { color: var(--blue-logo); text-decoration: none; }
+    .pp-section a:hover { text-decoration: underline; }
+
+    /* Sub-seções */
+    .pp-subsection { margin: 24px 0 8px; }
+    .pp-subsection__title {
+      font-family: var(--font-body); font-size: 14px; font-weight: 700;
+      letter-spacing: .4px; color: var(--fg-secondary); margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    /* Listas */
+    .pp-list {
+      list-style: none; display: flex; flex-direction: column; gap: 8px; margin: 12px 0 20px;
+    }
+    .pp-list li {
+      display: flex; align-items: flex-start; gap: 10px;
+      font-size: 15px; color: var(--fg-muted); line-height: 1.6;
+    }
+    .pp-list li::before {
+      content: ""; width: 5px; height: 5px; border-radius: 50%;
+      background: var(--blue-logo); flex-shrink: 0; margin-top: 8px; opacity: .7;
+    }
+
+    /* Bloco de destaque (cookies) */
+    .pp-highlight {
+      background: var(--bg-elev-1); border: 1px solid var(--border-1);
+      border-left: 3px solid var(--blue-logo);
+      border-radius: 10px; padding: 20px 24px;
+      margin: 16px 0;
+    }
+    .pp-highlight__label {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px;
+      text-transform: uppercase; color: var(--blue-logo); margin-bottom: 6px; display: block;
+    }
+    .pp-highlight p {
+      font-size: 15px; line-height: 1.7; color: var(--fg-muted); margin-bottom: 0 !important;
+    }
+
+    /* Card de contato final */
+    .pp-contact-card {
+      background: var(--bg-elev-1); border: 1px solid var(--border-2);
+      border-radius: 14px; padding: 36px 40px;
+      display: flex; align-items: flex-start; gap: 32px;
+      margin-top: 8px;
+    }
+    .pp-contact-card__icon {
+      width: 56px; height: 56px; border-radius: 12px; flex-shrink: 0;
+      background: rgba(79,142,247,.10); border: 1px solid rgba(79,142,247,.25);
+      display: flex; align-items: center; justify-content: center; font-size: 24px;
+    }
+    .pp-contact-card__body { flex: 1; }
+    .pp-contact-card__title {
+      font-family: var(--font-display); font-size: 22px; font-weight: 900;
+      text-transform: uppercase; letter-spacing: -.3px;
+      color: var(--fg-primary); margin-bottom: 6px;
+    }
+    .pp-contact-card__info {
+      display: flex; flex-direction: column; gap: 4px; margin-top: 14px;
+    }
+    .pp-contact-card__info span {
+      font-family: var(--font-mono); font-size: 12px; letter-spacing: .5px;
+      color: var(--fg-muted);
+    }
+    .pp-contact-card__info a { color: var(--blue-logo); text-decoration: none; }
+    .pp-contact-card__info a:hover { text-decoration: underline; }
+
+    /* Rodapé da política */
+    .pp-footer-note {
+      margin-top: 56px; padding-top: 32px;
+      border-top: 1px solid var(--border-1);
+      text-align: center;
+    }
+    .pp-footer-note p {
+      font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px;
+      color: var(--fg-muted-2); line-height: 1.7;
+    }
+
+    /* ═══ FOOTER ═══ */
+    .contact-footer {
+      position: relative; z-index: 1; padding: 32px 80px;
+      background: #ffffff; border-top: 3px solid #4F8EF7;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 24px; box-shadow: 0 -2px 20px rgba(26,36,96,.08);
+    }
+    .footer-brand { display: flex; align-items: center; gap: 16px; }
+    .footer-brand img { height: 56px; width: auto; }
+    .footer-brand span { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: #3a4a6b; }
+    .footer-links { display: flex; gap: 28px; list-style: none; }
+    .footer-links a { font-size: 13px; font-weight: 500; color: #3a4a6b; text-decoration: none; transition: color .2s var(--ease); cursor: pointer; }
+    .footer-links a:hover { color: #1a2460; }
+    .footer-copy { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1px; color: #3a4a6b; }
+
+    /* ═══ WhatsApp Float ═══ */
+    .whatsapp-float {
+      position: fixed; bottom: 28px; right: 28px; z-index: 9998;
+      width: 56px; height: 56px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.45); text-decoration: none;
+      transition: transform .3s var(--ease); animation: wa-pulse 3s ease-in-out infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.12); }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #fff; }
+    @keyframes wa-pulse { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.45)} 50%{box-shadow:0 4px 28px rgba(37,211,102,.75),0 0 0 8px rgba(37,211,102,.12)} }
+
+    @keyframes shimmer-move { 0%{background-position:-200% 0;opacity:.6} 50%{opacity:1} 100%{background-position:200% 0;opacity:.6} }
+
+    /* ═══ RESPONSIVO ═══ */
+    @media (max-width: 860px) {
+      .navbar { padding: 0 16px; }
+      .nav-toggle { display: flex; }
+      .navbar__menu {
+        display: none; position: absolute; top: 72px; left: 0; right: 0;
+        flex-direction: column; align-items: stretch; background: #fff;
+        border-bottom: 1px solid #e8ecf4; padding: 8px 0;
+      }
+      .navbar__menu.is-open { display: flex; }
+      .navbar__menu a { padding: 14px 24px; }
+      .pp-hero { padding: 110px 20px 48px; }
+      .pp-layout { grid-template-columns: 1fr; padding: 0 20px 80px; gap: 32px; }
+      .pp-toc { position: static; }
+      .contact-footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+      .footer-links { flex-wrap: wrap; gap: 12px 20px; }
+      .footer-brand img { height: 44px; }
+      .pp-contact-card { flex-direction: column; gap: 20px; padding: 28px 24px; }
+    }
+    @media (max-width: 560px) {
+      .pp-hero { padding: 100px 14px 40px; }
+      .pp-layout { padding: 0 14px 60px; }
+    }
+    @media (max-width: 860px) {
+      html, body { overflow-x: hidden; max-width: 100vw; }
+      .contact-footer { display: grid; grid-template-columns: 1fr; gap: 20px; padding: 28px 20px; }
+      .footer-links { flex-wrap: wrap; gap: 10px 18px; }
+      .footer-brand img { height: 44px; }
+      .footer-brand { gap: 12px; }
+      .footer-brand span { font-size: 10px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="atm-shimmer" aria-hidden="true"></div>
+  <div class="atm-vglow"   aria-hidden="true"></div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <a href="/" class="navbar__logo">
+      <img src="ROM55-LOGO.webp" fetchpriority="high" decoding="async" width="auto" height="52" alt="Rom55 Growth Marketing" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="navbar__menu" id="navMenu" role="list">
+      <li><a href="/">Home</a></li>
+      <li><a href="/servicos">Serviços</a></li>
+      <li><a href="/sobre">Sobre Nós</a></li>
+      <li><a href="/contato">Contato</a></li>
+      <li><a href="#">Blog</a></li>
+      <li>
+        <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
+           target="_blank" class="navbar__cta">
+          <span>↑</span><span>Acelerar agora</span>
+        </a>
+      </li>
+    </ul>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="pp-hero">
+      <div class="pp-hero__eyebrow">Transparência &amp; Dados</div>
+      <h1 class="pp-hero__title">
+        <span class="l1">Política de</span>
+        <span class="l2">Privacidade</span>
+      </h1>
+      <p class="pp-hero__date">Última atualização: 03 de setembro de 2026</p>
+    </section>
+
+    <!-- CONTEÚDO -->
+    <div class="pp-layout">
+
+      <!-- ÍNDICE LATERAL -->
+      <aside class="pp-toc" aria-label="Índice">
+        <span class="pp-toc__label">Nesta página</span>
+        <ul class="pp-toc__list">
+          <li><a href="#intro">Introdução</a></li>
+          <li><a href="#s1">1. Dados coletados</a></li>
+          <li><a href="#s2">2. Finalidades</a></li>
+          <li><a href="#s3">3. Bases legais</a></li>
+          <li><a href="#s4">4. Cookies</a></li>
+          <li><a href="#s5">5. Compartilhamento</a></li>
+          <li><a href="#s6">6. Transferência internacional</a></li>
+          <li><a href="#s7">7. Armazenamento e segurança</a></li>
+          <li><a href="#s8">8. Retenção dos dados</a></li>
+          <li><a href="#s9">9. Comunicações</a></li>
+          <li><a href="#s10">10. Seus direitos</a></li>
+          <li><a href="#s11">11. Crianças e adolescentes</a></li>
+          <li><a href="#s12">12. Links de terceiros</a></li>
+          <li><a href="#s13">13. Alterações</a></li>
+          <li><a href="#s14">14. Contato</a></li>
+        </ul>
+      </aside>
+
+      <!-- ARTIGO -->
+      <article class="pp-content">
+
+        <div class="pp-intro" id="intro">
+          <p>A <strong>ROM55 Growth Solutions</strong> valoriza a privacidade e a proteção dos dados pessoais de seus clientes, potenciais clientes, parceiros e visitantes.</p>
+          <p>Esta Política de Privacidade tem como objetivo explicar, de forma clara e transparente, como podemos coletar, utilizar, armazenar, compartilhar e proteger informações pessoais obtidas por meio do site <a href="https://www.rom55.com.br" target="_blank">www.rom55.com.br</a>, de nossos formulários, canais de atendimento e demais interações relacionadas aos nossos serviços.</p>
+          <p>Ao utilizar nosso site ou fornecer seus dados pessoais por meio de nossos canais de contato, você declara estar ciente das práticas descritas nesta Política de Privacidade.</p>
+        </div>
+
+        <!-- 1 -->
+        <section class="pp-section" id="s1">
+          <span class="pp-section__num">01</span>
+          <h2 class="pp-section__title">Quais dados podemos coletar</h2>
+
+          <div class="pp-subsection">
+            <p class="pp-subsection__title">Dados fornecidos diretamente por você</p>
+            <ul class="pp-list">
+              <li>Nome</li>
+              <li>Telefone e WhatsApp</li>
+              <li>Endereço de e-mail</li>
+              <li>Empresa em que trabalha ou representa</li>
+              <li>Cargo ou função</li>
+              <li>Segmento de atuação</li>
+              <li>Informações relacionadas ao negócio</li>
+              <li>Faturamento ou faixa de faturamento da empresa</li>
+              <li>Necessidades, interesses e objetivos comerciais</li>
+              <li>Informações fornecidas em formulários de contato ou qualificação</li>
+              <li>Informações fornecidas durante reuniões, diagnósticos ou atendimentos</li>
+              <li>Outras informações que você voluntariamente nos forneça</li>
+            </ul>
+          </div>
+
+          <div class="pp-subsection">
+            <p class="pp-subsection__title">Dados coletados automaticamente</p>
+            <p>Ao acessar nosso site, algumas informações técnicas podem ser coletadas automaticamente, tais como:</p>
+            <ul class="pp-list">
+              <li>Endereço IP</li>
+              <li>Tipo de dispositivo</li>
+              <li>Navegador utilizado</li>
+              <li>Sistema operacional</li>
+              <li>Páginas acessadas</li>
+              <li>Data e horário dos acessos</li>
+              <li>Tempo de permanência nas páginas</li>
+              <li>Origem do acesso</li>
+              <li>Cliques e interações realizadas no site</li>
+              <li>Identificadores de cookies e tecnologias semelhantes</li>
+            </ul>
+            <p>Essas informações podem ser utilizadas para analisar o desempenho do site, entender o comportamento dos visitantes e melhorar nossas estratégias de comunicação e marketing.</p>
+          </div>
+        </section>
+
+        <!-- 2 -->
+        <section class="pp-section" id="s2">
+          <span class="pp-section__num">02</span>
+          <h2 class="pp-section__title">Para que utilizamos seus dados</h2>
+          <p>Os dados coletados poderão ser utilizados para as seguintes finalidades:</p>
+          <ul class="pp-list">
+            <li>Responder solicitações realizadas pelo site</li>
+            <li>Entrar em contato com potenciais clientes</li>
+            <li>Realizar a qualificação de leads</li>
+            <li>Agendar reuniões e diagnósticos</li>
+            <li>Elaborar propostas comerciais</li>
+            <li>Prestar nossos serviços</li>
+            <li>Realizar atendimento e suporte</li>
+            <li>Melhorar nossos produtos, serviços e processos</li>
+            <li>Personalizar a experiência dos visitantes</li>
+            <li>Analisar o desempenho e a utilização do site</li>
+            <li>Avaliar a eficiência de campanhas de marketing</li>
+            <li>Realizar ações de marketing e remarketing, quando aplicável</li>
+            <li>Enviar comunicações comerciais relacionadas aos nossos serviços</li>
+            <li>Manter registros administrativos e comerciais</li>
+            <li>Prevenir fraudes, abusos e incidentes de segurança</li>
+            <li>Cumprir obrigações legais ou regulatórias</li>
+            <li>Exercer direitos em processos administrativos, judiciais ou arbitrais</li>
+          </ul>
+          <p>A ROM55 utilizará os dados pessoais somente para finalidades legítimas, específicas e compatíveis com a relação mantida com o titular.</p>
+        </section>
+
+        <!-- 3 -->
+        <section class="pp-section" id="s3">
+          <span class="pp-section__num">03</span>
+          <h2 class="pp-section__title">Bases legais para tratamento dos dados</h2>
+          <p>O tratamento de dados pessoais poderá ocorrer com fundamento nas hipóteses previstas na <strong>Lei Geral de Proteção de Dados – LGPD</strong>, incluindo, conforme o caso:</p>
+          <ul class="pp-list">
+            <li>Consentimento do titular</li>
+            <li>Execução de contrato ou procedimentos preliminares relacionados a contrato</li>
+            <li>Cumprimento de obrigação legal ou regulatória</li>
+            <li>Exercício regular de direitos</li>
+            <li>Legítimo interesse da ROM55 ou de terceiros, observados os direitos e liberdades fundamentais do titular</li>
+            <li>Outras hipóteses legalmente previstas</li>
+          </ul>
+          <p>Quando o tratamento depender do consentimento, o titular poderá solicitar sua revogação nos termos da legislação aplicável.</p>
+        </section>
+
+        <!-- 4 -->
+        <section class="pp-section" id="s4">
+          <span class="pp-section__num">04</span>
+          <h2 class="pp-section__title">Cookies e tecnologias semelhantes</h2>
+          <p>Nosso site poderá utilizar cookies e tecnologias semelhantes para garantir seu funcionamento, melhorar a experiência de navegação, medir desempenho e compreender como os visitantes interagem com nossas páginas.</p>
+          <p>Os cookies podem ser classificados como:</p>
+
+          <div class="pp-highlight">
+            <span class="pp-highlight__label">Cookies necessários</span>
+            <p>Utilizados para permitir funcionalidades essenciais e o correto funcionamento do site.</p>
+          </div>
+          <div class="pp-highlight">
+            <span class="pp-highlight__label">Cookies de desempenho e análise</span>
+            <p>Utilizados para compreender como os visitantes utilizam o site e avaliar seu desempenho.</p>
+          </div>
+          <div class="pp-highlight">
+            <span class="pp-highlight__label">Cookies de funcionalidade</span>
+            <p>Utilizados para armazenar determinadas preferências do usuário.</p>
+          </div>
+          <div class="pp-highlight">
+            <span class="pp-highlight__label">Cookies de publicidade e marketing</span>
+            <p>Podem ser utilizados para medir campanhas, identificar conversões, realizar remarketing e apresentar anúncios mais relevantes.</p>
+          </div>
+
+          <p>Dependendo das ferramentas utilizadas pela ROM55, poderão existir tecnologias de terceiros relacionadas a plataformas de análise, publicidade e comunicação, como Google, Meta e outras soluções digitais.</p>
+          <p>Sempre que exigido pela legislação aplicável, cookies que não sejam estritamente necessários dependerão da escolha ou consentimento do usuário. O visitante poderá gerenciar cookies por meio das opções disponibilizadas no site ou pelas configurações de seu próprio navegador.</p>
+        </section>
+
+        <!-- 5 -->
+        <section class="pp-section" id="s5">
+          <span class="pp-section__num">05</span>
+          <h2 class="pp-section__title">Compartilhamento de dados</h2>
+          <p>A ROM55 <strong>não comercializa dados pessoais</strong>. Entretanto, algumas informações poderão ser compartilhadas com fornecedores e parceiros necessários para a operação de nossos serviços, como:</p>
+          <ul class="pp-list">
+            <li>Plataformas de hospedagem</li>
+            <li>Sistemas de CRM</li>
+            <li>Plataformas de automação</li>
+            <li>Ferramentas de análise de dados</li>
+            <li>Plataformas de publicidade digital</li>
+            <li>Serviços de e-mail e comunicação</li>
+            <li>WhatsApp e plataformas de atendimento</li>
+            <li>Sistemas de agendamento</li>
+            <li>Ferramentas de videoconferência</li>
+            <li>Serviços de armazenamento em nuvem</li>
+            <li>Prestadores de serviços tecnológicos</li>
+            <li>Profissionais ou empresas envolvidos na execução dos serviços contratados</li>
+          </ul>
+          <p>O compartilhamento ocorrerá somente quando necessário para as finalidades descritas nesta Política ou quando houver obrigação legal. Também poderemos compartilhar informações com autoridades públicas, administrativas ou judiciais quando houver obrigação legal, ordem judicial ou necessidade de defesa dos direitos da ROM55.</p>
+        </section>
+
+        <!-- 6 -->
+        <section class="pp-section" id="s6">
+          <span class="pp-section__num">06</span>
+          <h2 class="pp-section__title">Transferência internacional de dados</h2>
+          <p>Alguns fornecedores de tecnologia utilizados pela ROM55 podem possuir servidores ou operações localizados fora do Brasil.</p>
+          <p>Nessas situações, determinados dados poderão ser processados ou armazenados em outros países, sempre buscando fornecedores que adotem padrões adequados de segurança e proteção de dados e observando as exigências previstas na legislação brasileira aplicável.</p>
+        </section>
+
+        <!-- 7 -->
+        <section class="pp-section" id="s7">
+          <span class="pp-section__num">07</span>
+          <h2 class="pp-section__title">Armazenamento e segurança dos dados</h2>
+          <p>A ROM55 adota medidas técnicas e administrativas razoáveis destinadas a proteger os dados pessoais contra acessos não autorizados e situações acidentais ou ilícitas de destruição, perda, alteração, divulgação ou tratamento inadequado. Entre essas medidas podem estar:</p>
+          <ul class="pp-list">
+            <li>Controle de acesso às informações</li>
+            <li>Restrição de acesso aos dados</li>
+            <li>Utilização de sistemas protegidos por autenticação</li>
+            <li>Atualização de ferramentas e sistemas</li>
+            <li>Boas práticas de segurança da informação</li>
+            <li>Monitoramento e prevenção de acessos indevidos</li>
+          </ul>
+          <p>Apesar dos esforços empregados, nenhum sistema eletrônico ou transmissão de dados pela internet pode ser considerado totalmente isento de riscos.</p>
+        </section>
+
+        <!-- 8 -->
+        <section class="pp-section" id="s8">
+          <span class="pp-section__num">08</span>
+          <h2 class="pp-section__title">Por quanto tempo armazenamos os dados</h2>
+          <p>Os dados pessoais serão mantidos pelo período necessário para cumprir as finalidades para as quais foram coletados. O período de armazenamento poderá variar de acordo com:</p>
+          <ul class="pp-list">
+            <li>A natureza da informação</li>
+            <li>A relação existente com o titular</li>
+            <li>Obrigações legais ou regulatórias</li>
+            <li>Necessidade de execução de contratos</li>
+            <li>Exercício ou defesa de direitos</li>
+            <li>Necessidades administrativas legítimas</li>
+          </ul>
+          <p>Quando os dados deixarem de ser necessários, poderão ser eliminados ou anonimizados, salvo quando sua conservação for permitida ou exigida pela legislação.</p>
+        </section>
+
+        <!-- 9 -->
+        <section class="pp-section" id="s9">
+          <span class="pp-section__num">09</span>
+          <h2 class="pp-section__title">Comunicações de marketing</h2>
+          <p>Quando permitido pela legislação aplicável, a ROM55 poderá utilizar informações de contato para enviar comunicações relacionadas aos seus serviços, conteúdos, novidades, materiais, eventos ou oportunidades comerciais.</p>
+          <p>O titular poderá solicitar a interrupção dessas comunicações a qualquer momento, pelo próprio mecanismo de descadastramento disponibilizado na comunicação ou entrando em contato pelo e-mail <a href="mailto:contato@rom55.com.br">contato@rom55.com.br</a>.</p>
+          <p>A solicitação de cancelamento de comunicações promocionais não impede o envio de mensagens administrativas ou necessárias à execução de uma relação comercial ou contratual existente.</p>
+        </section>
+
+        <!-- 10 -->
+        <section class="pp-section" id="s10">
+          <span class="pp-section__num">10</span>
+          <h2 class="pp-section__title">Direitos dos titulares</h2>
+          <p>Nos termos da <strong>Lei Geral de Proteção de Dados</strong>, o titular poderá solicitar, quando aplicável:</p>
+          <ul class="pp-list">
+            <li>Confirmação da existência de tratamento</li>
+            <li>Acesso aos seus dados pessoais</li>
+            <li>Correção de dados incompletos, inexatos ou desatualizados</li>
+            <li>Anonimização, bloqueio ou eliminação de dados desnecessários ou tratados em desconformidade com a legislação</li>
+            <li>Portabilidade dos dados, observadas as normas aplicáveis</li>
+            <li>Informação sobre o compartilhamento de dados</li>
+            <li>Informação sobre a possibilidade de não fornecer consentimento e suas consequências</li>
+            <li>Revogação do consentimento</li>
+            <li>Eliminação dos dados tratados com fundamento no consentimento, quando aplicável</li>
+            <li>Oposição a determinados tratamentos realizados com fundamento em outras bases legais</li>
+            <li>Revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais, quando aplicável</li>
+          </ul>
+          <p>A ROM55 poderá solicitar informações adicionais para confirmar a identidade do solicitante antes de atender determinadas requisições, com o objetivo de proteger os próprios dados do titular.</p>
+        </section>
+
+        <!-- 11 -->
+        <section class="pp-section" id="s11">
+          <span class="pp-section__num">11</span>
+          <h2 class="pp-section__title">Dados de crianças e adolescentes</h2>
+          <p>Os serviços da ROM55 são direcionados principalmente a empresas e profissionais. Não temos como objetivo coletar intencionalmente dados pessoais de crianças ou adolescentes por meio deste site.</p>
+          <p>Caso seja identificada a coleta indevida desse tipo de informação, poderão ser adotadas as medidas necessárias para sua exclusão, observadas as obrigações legais aplicáveis.</p>
+        </section>
+
+        <!-- 12 -->
+        <section class="pp-section" id="s12">
+          <span class="pp-section__num">12</span>
+          <h2 class="pp-section__title">Links e serviços de terceiros</h2>
+          <p>Nosso site poderá conter links para outros sites, redes sociais, plataformas de atendimento, WhatsApp ou serviços de terceiros. Ao acessar esses ambientes, o tratamento das informações poderá estar sujeito às políticas de privacidade e termos próprios dessas plataformas.</p>
+          <p>A ROM55 não é responsável pelas práticas de privacidade adotadas por sites ou serviços de terceiros. Recomendamos que o usuário consulte as respectivas políticas antes de fornecer seus dados pessoais.</p>
+        </section>
+
+        <!-- 13 -->
+        <section class="pp-section" id="s13">
+          <span class="pp-section__num">13</span>
+          <h2 class="pp-section__title">Alterações nesta Política</h2>
+          <p>Esta Política de Privacidade poderá ser atualizada periodicamente para refletir mudanças em nossos processos, tecnologias, serviços ou exigências legais.</p>
+          <p>Sempre que houver uma atualização relevante, a nova versão será disponibilizada nesta página com a indicação da data da última atualização. Recomendamos que esta Política seja consultada periodicamente.</p>
+        </section>
+
+        <!-- 14 -->
+        <section class="pp-section" id="s14">
+          <span class="pp-section__num">14</span>
+          <h2 class="pp-section__title">Contato e solicitações</h2>
+          <p>Caso tenha alguma dúvida sobre esta Política de Privacidade, sobre o tratamento de seus dados pessoais ou queira exercer algum dos direitos previstos pela LGPD, entre em contato conosco:</p>
+
+          <div class="pp-contact-card">
+            <div class="pp-contact-card__icon">🔒</div>
+            <div class="pp-contact-card__body">
+              <div class="pp-contact-card__title">ROM55 Growth Solutions</div>
+              <p style="font-size:14px;color:var(--fg-muted);line-height:1.6;margin-top:4px;">As solicitações relacionadas à privacidade e proteção de dados serão analisadas e respondidas de acordo com a legislação aplicável.</p>
+              <div class="pp-contact-card__info">
+                <span>E-mail: <a href="mailto:contato@rom55.com.br">contato@rom55.com.br</a></span>
+                <span>WhatsApp: <a href="https://wa.me/5511976028767" target="_blank">(11) 9 7602-8767</a></span>
+                <span>Site: <a href="https://www.rom55.com.br" target="_blank">www.rom55.com.br</a></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="pp-footer-note">
+          <p>ROM55 Growth Solutions — Estratégia · Dados · Escala</p>
+        </div>
+
+      </article>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="contact-footer">
+    <div class="footer-brand">
+      <img src="ROM55-LOGO.webp" alt="Rom55" />
+      <span>© 2026 Rom55 Growth Solutions</span>
+    </div>
+    <ul class="footer-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/servicos">Serviços</a></li>
+      <li><a href="/sobre">Sobre Nós</a></li>
+      <li><a href="/contato">Contato</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="/termos" style="color:#1a2460;font-weight:600">Política de Privacidade</a></li>
+    </ul>
+    <span class="footer-copy">contato@rom55.com.br</span>
+  </footer>
+
+  <script id="footer-nav-script">
+    document.querySelectorAll('.footer-links a').forEach(function(a) {
+      a.addEventListener('click', function(e) {
+        var href = a.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('#')) e.preventDefault();
+      });
+    });
+  </script>
+
+  <!-- WhatsApp Flutuante -->
+  <a href="https://wa.me/5511976028767?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20quero%20receber%20mais%20informa%C3%A7%C3%B5es..."
+     target="_blank" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+
+  <script>
+    /* Mobile nav */
+    const toggle = document.getElementById('navToggle');
+    const menu   = document.getElementById('navMenu');
+    toggle.addEventListener('click', () => {
+      const open = menu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a:not(.navbar__cta)').forEach(a => {
+      a.addEventListener('click', e => {
+        const href = a.getAttribute('href');
+        if (!href || href === '#' || href.startsWith('#')) e.preventDefault();
+        menu.querySelectorAll('a').forEach(x => x.classList.remove('is-active'));
+        a.classList.add('is-active');
+        if (window.innerWidth <= 860) menu.classList.remove('is-open');
+      });
+    });
+
+    /* Scroll light line */
+    (function() {
+      const line = document.querySelector('.atm-vglow');
+      if (!line) return;
+      function update() {
+        const scrollY = window.scrollY;
+        const docH = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docH > 0 ? Math.min(scrollY / docH, 1) : 0;
+        const center = 10 + progress * 80, spread = 18;
+        const top = Math.max(0, center - spread), bot = Math.min(100, center + spread);
+        line.style.background = 'linear-gradient(rgba(0,0,0,0) 0%,rgba(0,0,0,0) ' + top + '%,rgba(139,187,255,.55) ' + (center - spread * .4) + '%,rgba(79,142,247,.90) ' + center + '%,rgba(139,187,255,.55) ' + (center + spread * .4) + '%,rgba(0,0,0,0) ' + bot + '%,rgba(0,0,0,0) 100%)';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    })();
+
+    /* Highlight item ativo no índice ao scrollar */
+    (function() {
+      const sections = document.querySelectorAll('.pp-section, .pp-intro');
+      const links = document.querySelectorAll('.pp-toc__list a');
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            links.forEach(l => l.style.color = '');
+            const id = entry.target.id;
+            const active = document.querySelector('.pp-toc__list a[href="#' + id + '"]');
+            if (active) active.style.color = 'var(--blue-logo)';
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+      sections.forEach(s => obs.observe(s));
+    })();
+  </script>
+
+</body>
+</html>
